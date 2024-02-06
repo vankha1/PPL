@@ -1,0 +1,1 @@
+func fact(number a, string b, bool c, var d, dynamic e, troll f)

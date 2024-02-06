@@ -1,0 +1,2 @@
+func,void,(,),begin,for,i,<-,1,until,i,<,getMax,(,),by,i,+,1,begin,if,(,true,),begin,write,(,kaka,),else,begin,write,(,kuku,),end,if,(,false,),end,end,end,
+,<EOF>

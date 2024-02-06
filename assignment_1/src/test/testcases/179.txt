@@ -1,0 +1,10 @@
+
+        func void () 
+        begin
+            number k <- 5
+            for i=1 until i<getMax() by i + 1
+                write(i)
+            if((k<200) and (k>0))
+                k = k + 5
+        end
+        

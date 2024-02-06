@@ -1,0 +1,12 @@
+
+        func void() 
+        begin
+            begin
+                hello()
+                number a <- 1
+            begin
+                hello()
+                number a <- 1
+            end
+        end
+        

@@ -1,0 +1,6 @@
+ func main()
+begin
+for <number-variable> until <condition expression> by <update-expression>
+<statement>
+end
+ 

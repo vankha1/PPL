@@ -1,0 +1,7 @@
+func fact(number a)
+            begin
+                var b <- 5
+                dynamic c
+                number d[6]
+            end
+        

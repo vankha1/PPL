@@ -1,0 +1,6 @@
+
+            func void()
+            begin
+                return return
+            end
+        

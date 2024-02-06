@@ -1,0 +1,8 @@
+func test ()
+        begin
+    if (a==(b >= c)) 
+    begin
+    end
+    else return 1
+    end
+    

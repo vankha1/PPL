@@ -1,0 +1,19 @@
+func fact(number n)
+            begin
+                a[1] <- 2
+                begin
+                    foo(5)
+                    ## end
+                    return 3
+                    ## begin
+                    continue
+                    ## return
+                    break
+                    ## break
+                    readNumber()
+                    ## continue
+                    var a <- 5
+                    ## test
+                end
+            end
+        

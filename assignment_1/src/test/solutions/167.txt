@@ -1,0 +1,3 @@
+string,a,<-,Kha,
+,string,b,<-,Sang,
+,string,c,<-,a,...,b,<EOF>

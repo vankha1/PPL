@@ -1,0 +1,45 @@
+
+            func void (dynamic arr[100], number n, number m)
+            begin
+                number i,k,l <- -1,0,0
+                ## k - starting row index
+                ##  m - ending row index
+                ##  l - starting column index
+                ##  n - ending column index
+                ##  i - iterator
+                ##
+                if ((k < m) and (l < n)) 
+                begin
+                    ## Print the first row from the remaining rows
+                    for i <- l until i < n by i+1 
+                    begin
+                        writeString(a[k,i])
+                    end
+                    k<-k+1
+                    ## Print the last row from the remaining rows
+                    for i <- k until i < m by i+1 
+                    begin
+                        writeString(a[i,n-1])
+                    end
+                    n<-n-1
+                    ## Print the first row from the remaining rows
+                    if (k < m) 
+                    begin
+                        for i <- n - 1 until i >= l by i-1 
+                        begin
+                            writeString(a[m-1,i])
+                        end
+                        m<-m-1
+                    end
+                    ## Print the first row from the remaining rows
+                    if (l < n) 
+                    begin
+                        for i <- m - 1 until i >= k by i-1 
+                        begin
+                            writeString(a[i,l])
+                        end
+                        l<-l+1
+                    end
+                end
+            end
+        

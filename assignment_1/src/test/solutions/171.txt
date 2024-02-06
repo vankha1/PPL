@@ -1,0 +1,1 @@
+main,void,(,),begin,for,i,<-,get_started,(,),until,i,<,5,*,2,by,i,+,2,begin,for,j,<-,get_started,(,),until,j,<,5,*,2,by,j,+,1,begin,printInteger,(,i,+,j,),end,end,end,<EOF>

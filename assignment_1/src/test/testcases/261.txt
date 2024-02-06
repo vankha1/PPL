@@ -1,0 +1,5 @@
+func teask(number a, dynamic b, number c[5], string d) 
+        begin
+                print()
+            end
+            

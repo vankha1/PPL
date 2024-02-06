@@ -1,0 +1,6 @@
+
+,func,void,(,),
+,begin,
+,f,(,1,*,x,,,_123,,,sss,...,aaa,,,dsa,(,dsa,),,,x,%,5,),
+,end,
+,<EOF>

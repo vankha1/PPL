@@ -1,0 +1,5 @@
+var arr <- [1,2,3]
+func test() begin
+    print( ((arr))[0] )
+end
+        

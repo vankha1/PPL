@@ -1,0 +1,12 @@
+func test()
+        begin
+            begin
+                number r
+                number s
+                r <- 2.0
+                number a[5]
+                number b[5]
+                s <- r * r * myPI
+                a[0] <- s
+            end
+        end

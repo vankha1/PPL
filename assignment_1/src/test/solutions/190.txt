@@ -1,0 +1,13 @@
+
+,func,integer,(,var,a,[,2,],,,number,x,,,number,low,,,dynamic,high,),
+,beign,
+,if,(,low,>,high,),return,-,1,
+,else,
+,beign,
+,number,mid,<-,(,low,+,high,),/,2,
+,if,(,x,==,arr,[,mid,],),return,mid,
+,else,if,(,x,>,arr,[,mid,],),return,binarySearch,(,arr,,,x,,,mid,+,1,,,high,),
+,else,return,binarySearch,(,arr,,,x,,,low,,,mid,-,1,),
+,end,
+,end,
+,<EOF>

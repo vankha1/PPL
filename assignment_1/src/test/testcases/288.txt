@@ -1,0 +1,11 @@
+func fact(number n)
+            begin
+                a[1] <- begin
+                    a(0)
+                end
+                begin
+                    ## Function call
+                    a(0)
+                end
+                return 1
+            end

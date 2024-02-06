@@ -1,0 +1,4 @@
+
+            for i until i < 10 by 1 
+                writeInt(i)
+        

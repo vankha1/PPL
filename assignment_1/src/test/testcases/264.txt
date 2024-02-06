@@ -1,0 +1,4 @@
+ func foo( number n,
+string s
+)
+ 

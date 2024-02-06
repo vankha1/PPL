@@ -1,0 +1,7 @@
+
+            func void()
+            begin
+                write("hello")
+            end
+            return 1
+        

@@ -1,0 +1,5 @@
+ ##check keyword rule
+func foo(number start,number end)
+func main()
+return
+ 

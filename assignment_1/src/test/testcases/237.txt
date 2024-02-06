@@ -1,0 +1,7 @@
+func test() 
+                begin
+                    for a[1] until a[1] > 5 by 1
+                    begin
+                    end
+                end
+        

@@ -1,0 +1,1 @@
+ main void () begin while (a<5) begin printInteger(a) a = a+1 end end 

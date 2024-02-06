@@ -1,0 +1,10 @@
+
+            func void()
+            begin
+                writeString("hello")
+            end
+            func integer(number x)
+            begin
+                return 1
+            end
+        

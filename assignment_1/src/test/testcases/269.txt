@@ -1,0 +1,2 @@
+string b[3] <- [3, "fire", false]
+        

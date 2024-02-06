@@ -1,0 +1,8 @@
+func test()
+        begin
+            var a <- 3
+            for a until "A"..."B"..."C" by 1
+            begin
+            end
+        end
+        

@@ -1,0 +1,7 @@
+func test() 
+        begin
+            for a[2] until i >= 3 by 1
+            begin
+            end
+        end
+        

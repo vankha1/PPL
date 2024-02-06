@@ -1,0 +1,14 @@
+
+,func,void,(,dynamic,arr,[,100,],,,number,begin,,,number,end,),
+,begin,
+,if,(,low,<,high,),
+,begin,
+,
+,number,pi,<-,partition,(,arr,,,low,,,high,),
+,
+,
+,quickSort,(,arr,,,low,,,pi,-,1,),
+,quickSort,(,arr,,,pi,+,1,,,high,),
+,end,
+,end,
+,<EOF>

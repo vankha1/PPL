@@ -1,0 +1,5 @@
+func fact(number a)
+            begin
+                ##
+            end
+            

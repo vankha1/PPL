@@ -1,0 +1,5 @@
+ 
+number line[1e9] <- createArray(10)
+
+
+ 

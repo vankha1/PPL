@@ -1,0 +1,8 @@
+main void ()
+        begin
+            for i <- get_started() until i<=5 by i+2
+            begin
+                writeNumber("Yoooo!")
+            end
+        end
+        

@@ -1,0 +1,17 @@
+
+,func,void,(,dynamic,arr,[,100,],,,number,begin,),
+,begin,
+,
+,for,i,<-,N,/,2,-,1,until,i,>=,0,by,i,-,1,
+,heapify,(,arr,,,N,,,i,),
+,
+,
+,for,i,<-,N,-,1,until,i,>,0,by,i,-,1,
+,begin,
+,
+,swap,(,arr,[,0,],,,arr,[,i,],),
+,
+,heapify,(,arr,,,i,,,0,),
+,end,
+,end,
+,<EOF>

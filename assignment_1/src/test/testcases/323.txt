@@ -1,0 +1,5 @@
+func test(number a <- 5) 
+        begin
+            var arr[3] <- [0, "rac", 2]
+        end
+        

@@ -1,0 +1,13 @@
+        func fact(number a) 
+            begin
+                if (a <- 2) a <- 3
+                else
+                for a until a >= 5 by 1.2
+                begin
+                    break
+                end
+                continue
+                return 12
+                break
+            end
+            number a <- 12901

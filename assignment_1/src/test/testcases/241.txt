@@ -1,0 +1,6 @@
+ func main() begin
+number numbeR[1,2,3,4,5]
+var a <- ((((numbeR[0])[1])[2])[3])[4] = numbeR[0,1,2,3,4]
+end
+
+ 

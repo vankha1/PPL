@@ -1,0 +1,6 @@
+func test ()
+        begin
+            func test1 ()
+            begin
+            end
+        end

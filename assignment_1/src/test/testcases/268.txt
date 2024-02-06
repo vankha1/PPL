@@ -1,0 +1,2 @@
+number a[3] <- [2, true, false]
+        

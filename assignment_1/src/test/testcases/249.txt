@@ -1,0 +1,6 @@
+func test ()
+        begin
+            writeNumber()
+            begin
+            end   
+        end

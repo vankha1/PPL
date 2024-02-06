@@ -1,0 +1,5 @@
+func fact(number b)
+                begin
+                    a[1230e-1] <- b
+                end
+        

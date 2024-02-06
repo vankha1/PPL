@@ -1,0 +1,5 @@
+func fact(number a, number b)
+                begin
+                    a[1,a[0]] <- 9
+                end
+                

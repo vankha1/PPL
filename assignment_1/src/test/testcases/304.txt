@@ -1,0 +1,5 @@
+func fact(number n) begin
+                if (n = 0) return 
+                else return 
+            end
+        

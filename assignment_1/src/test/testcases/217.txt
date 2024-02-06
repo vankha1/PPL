@@ -1,0 +1,5 @@
+func fact(number a, number b, number c) 
+        begin
+                  number d <- a == (b >= c[1])
+                end
+                

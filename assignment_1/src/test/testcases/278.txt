@@ -1,0 +1,14 @@
+        func fact(number a) 
+            begin
+            break
+            if (a==2) a <- 3
+            else for a until a >= 10 by 1
+                writeNumber(a)
+            begin
+            continue 
+            return 12
+            begin
+                break
+            end
+            end
+            var a <- 131

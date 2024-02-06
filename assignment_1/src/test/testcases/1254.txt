@@ -1,0 +1,6 @@
+var arr <- [1,2,3]
+func test() begin
+    f()[0, 1, 2] <- "abc"
+    number x <- [1, 2, 3][1] 
+end
+        

@@ -1,0 +1,6 @@
+func test() begin
+            if (a) do(a)
+
+           elif (a=2=2) do(b)
+        end
+        

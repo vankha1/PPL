@@ -1,0 +1,6 @@
+func test() begin
+            a[3 + foo(2)] <- a[b[2, 3]] + 4
+            a[3 + foo(2)] <- foo(2,3)[b[2, 3]] + 4
+            a[3 + foo(2)] <- c[10][10]
+        end
+        

@@ -1,0 +1,8 @@
+        func fact(number a)
+            begin
+                break
+                for a until a >= 10 by 2
+                begin
+                end
+            end
+        number a <- 131

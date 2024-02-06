@@ -1,0 +1,9 @@
+string test <- "depressed"
+                    func stringconcat(string test) 
+                    begin
+                        var i <- 0
+                        for i until i >= 10 by 1 
+                            concattest = test .... "z"... "asd" ... "sadasd"
+                        return concattest;
+                    end
+                    

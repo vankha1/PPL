@@ -1,0 +1,9 @@
+        func fact(number a)
+            begin
+                break
+                for (number a <- 912 until a <= 1000 by 1) 
+                begin
+                    return 15
+                end
+            end
+        number a <- 15, 2

@@ -1,0 +1,8 @@
+func fact(number a)
+        begin
+            var b <- 5
+            for b until b > c[3] by a[1] + foo()
+            begin
+            end
+        end
+        

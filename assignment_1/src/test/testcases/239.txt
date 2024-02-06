@@ -1,0 +1,5 @@
+ func main() begin
+bool a <- foo((x <-2) or (("a'""..."a\'") == "a'"a\'"))[3,2]
+end
+
+ 

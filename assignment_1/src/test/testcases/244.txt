@@ -1,0 +1,4 @@
+func a ()
+        begin
+    foo(2+x)
+end

@@ -1,0 +1,11 @@
+number a
+                number b
+                number c
+            func foo(number a, number b) 
+            begin
+                number e
+                e <- a + 4
+                c <- a * d / 2.0 
+                return c + 1
+            end
+    

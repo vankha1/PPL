@@ -1,0 +1,4 @@
+func main(number a, bool b)
+                begin
+                end
+            

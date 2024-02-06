@@ -1,0 +1,2 @@
+
+,func,void,(,),begin,number,a,<-,0,if,(,match,(,a,),<,10,),begin,printInteger,(,a,),if,(,match,(,a,),*,match,(,a,),<,69,),printInteger,(,10,-,a,),end,end,<EOF>

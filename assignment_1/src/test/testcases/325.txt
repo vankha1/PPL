@@ -1,0 +1,5 @@
+func test() 
+        begin
+            string a <- 1 or true ... "zcd"
+        end
+        

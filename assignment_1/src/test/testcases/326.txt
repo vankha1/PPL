@@ -1,0 +1,4 @@
+func main() begin
+            foo(2,3)[2] <- 3
+        end
+        

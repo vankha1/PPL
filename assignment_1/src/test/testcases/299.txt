@@ -1,0 +1,21 @@
+ number a <- 123456
+                    func fib(number n) 
+                    begin
+                        if (n == 1 or n == 0) n <- 2
+                        else  
+                            number a <- 0
+                            number b <- 1
+                            var i <- 2
+                            for i until i >= n + 1 by 1
+                            begin
+                                c <- a + b
+                                a <- b
+                                b <- c
+                            end
+                            return b
+                    end
+                    func print() 
+                    begin
+                        print(fib(3+1))
+                    end
+                

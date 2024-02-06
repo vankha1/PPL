@@ -1,0 +1,9 @@
+
+,func,void,(,),
+,begin,
+,hello,(,),
+,hello,(,Sang,),
+,hello,(,Sang,,,Kha,),
+,hello,(,hello,(,Sang,),,,Kha,),
+,end,
+,<EOF>

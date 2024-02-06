@@ -1,0 +1,6 @@
+func a() 
+        begin
+    printInteger(a)
+   end
+   begin
+end

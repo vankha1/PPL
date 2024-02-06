@@ -1,0 +1,4 @@
+func main()
+        begin
+    call(c) + call(d) <- 1
+        end

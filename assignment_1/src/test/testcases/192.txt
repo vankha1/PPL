@@ -1,0 +1,23 @@
+
+            func void (dynamic arr[100], number a)
+            begin
+                number i, j, min_idx
+                ## One by one move boundary of
+                ## unsorted subarray
+                for i <- 0 until i < n-1 by i+1
+                begin
+                    ## Find the minimum element in
+                    ## unsorted array
+                    min_idx <- i
+                    for j <- i+1 until j < n by j+1
+                    begin
+                    if (arr[j] < arr[min_idx])
+                        min_idx <- j
+                    end
+                    ## Swap the found minimum element
+                    ## with the first element
+                    if (min_idx!=i)
+                        swap(arr[min_idx], arr[i])
+                end
+            end
+        

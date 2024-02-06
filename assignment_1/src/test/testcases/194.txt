@@ -1,0 +1,14 @@
+
+            func void (dynamic arr[100], number begin, number end)
+            begin
+                if (low < high) 
+                begin
+                    ## pi is partitioning index, arr[p] is now at right place
+                    number pi <- partition(arr, low, high)
+                    ## Separately sort elements before
+                    ## partition and after partition
+                    quickSort(arr, low, pi - 1)
+                    quickSort(arr, pi + 1, high)
+                end
+            end
+        

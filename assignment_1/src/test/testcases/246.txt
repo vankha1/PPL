@@ -1,0 +1,6 @@
+func test ()
+        begin
+            readNumber()
+            begin
+            end   
+        end

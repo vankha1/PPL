@@ -1,0 +1,4 @@
+ ##check name rule
+func 12abc()
+func main
+ 

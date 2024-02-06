@@ -1,0 +1,27 @@
+
+            func boolean (number arr [100], number x, number a)
+            begin
+                number low <- 0
+                number high <- n-1
+                if((low<=high) && (target>=arr[low]) && (target <=arr[high]))
+                begin
+                    number pos = low + (((target - arr[low]) * (high - low)) / (arr[high] - arr[low]))
+                    ## Check if the target element is at the calculated position
+                    if( arr[pos] == target)
+                    begin
+                        return pos
+                    end
+                    ## If the target element is less than the element at the calculated position, search the left half of the list
+                    if(arr[pos] > target)
+                    begin
+                        high = pos - 1
+                    end
+                    else
+                    begin
+                        ## If the target element is greater than the element at the calculated position, search the right half of the list
+                        low = pos + 1
+                    end
+                end
+                return -1
+            end
+        

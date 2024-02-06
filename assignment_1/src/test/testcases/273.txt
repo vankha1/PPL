@@ -1,0 +1,5 @@
+func fact(number b)
+                begin
+                    var a <- b
+                end
+        

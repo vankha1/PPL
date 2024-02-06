@@ -1,0 +1,21 @@
+
+            func void (dynamic arr[100], number begin)
+            begin
+                number i, key, j
+                for i <- 1 until i < n  i+1
+                begin
+                    key <- arr[i]
+                    j <- i - 1
+                    ## Move elements of arr[0..i-1], 
+                    ## that are greater than key, to one
+                    ## position ahead of their
+                    ## current position
+                    if ((j >= 0) and (arr[j] > key))
+                    begin
+                        arr[j + 1] <- arr[j]
+                        j <- j - 1
+                    end
+                    arr[j + 1] <- key
+                end
+            end
+        

@@ -1,0 +1,10 @@
+func void () begin
+            if 
+                a <- a+1
+                number i <- 0
+                do
+                    writeNumber(i)
+                    i <- i+1
+                elif(i<a)
+            if(a<10)
+        

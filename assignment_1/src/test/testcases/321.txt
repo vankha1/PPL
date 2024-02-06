@@ -1,0 +1,4 @@
+func test() begin
+            var arr["roi"] <- [0, 2]
+        end
+        

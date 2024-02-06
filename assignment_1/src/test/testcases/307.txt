@@ -1,0 +1,8 @@
+func fact(number a) begin ## comment
+            for i until i >= 10 by 1 begin ## comment
+                                c <- a + b
+                                a <- b
+                                b <- c
+                            end
+        end
+        

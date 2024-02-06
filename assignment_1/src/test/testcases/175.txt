@@ -1,0 +1,1 @@
+func void () begin if a <- a+1 elif (a<10) end 

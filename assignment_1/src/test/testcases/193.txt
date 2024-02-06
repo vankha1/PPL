@@ -1,0 +1,11 @@
+
+            func void (dynamic arr[100], number begin, number end)
+            begin
+                if (begin >= end)
+                    return ## Returns recursively
+                mid: auto <- begin + (end - begin) / 2
+                mergeSort(arr, begin, mid)
+                mergeSort(arr, mid + 1, end)
+                merge(arr, begin, mid, end)
+            end
+        

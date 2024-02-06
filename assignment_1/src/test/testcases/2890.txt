@@ -1,0 +1,1 @@
+        func fact(number n)

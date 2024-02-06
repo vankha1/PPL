@@ -1,0 +1,13 @@
+
+,func,boolean,(,bool,x,),
+,begin,
+,return,x,!=,0,
+,end,
+,func,array,(,number,a,[,2,],,,string,x,),
+,begin,
+,return,
+,begin,
+,x,,,x,*,2,,,x,*,3,
+,end,
+,end,
+,<EOF>

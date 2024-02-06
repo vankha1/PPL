@@ -1,0 +1,2 @@
+func fact(number n) return 10
+        

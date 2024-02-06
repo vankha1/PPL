@@ -1,0 +1,11 @@
+ func count_vowels(string str)
+                    begin
+                        string vowels[5] <- ["a", "e", "i", "o", "u"]
+                        number integer <- 0
+                        return count
+                    end
+                    func main()
+                    begin
+                        result <- count_vowels("Hello, World!")
+                    end
+                
