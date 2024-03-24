@@ -1,0 +1,10 @@
+func foo(number a, number b) begin
+			number i <- 0
+			for i until i >= 5 by 1 begin
+				number x <- 10
+				number y <- 20
+				number z <- 30
+				return (x + a + y + b) > (y + a + z + b)
+			end
+		end
+		

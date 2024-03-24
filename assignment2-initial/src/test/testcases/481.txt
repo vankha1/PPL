@@ -1,0 +1,9 @@
+func foo1(string s, number N) begin
+			number i <- 0
+			for i until i >= N by 1 begin
+				string temp <- s[N - i - 1]
+				s[N - i - 1] <- s[i]
+				s[i] <- temp
+			end
+		end
+		

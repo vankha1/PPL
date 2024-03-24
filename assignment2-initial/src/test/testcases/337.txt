@@ -1,0 +1,22 @@
+
+        ## Main program
+func main()
+begin
+    ## Input name and age from the user
+    writeString("Enter your name: ")
+    var name <- readString()
+    
+    writeString("Enter your age: ")
+    var age <- readNumber()
+
+    ## Print the name and age
+    writeString("Your name is: ")
+    writeString(name)
+    writeString("\n")
+    
+    writeString("Your age is: ")
+    writeNumber(age)
+end
+
+
+        

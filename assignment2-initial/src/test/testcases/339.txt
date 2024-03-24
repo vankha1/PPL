@@ -1,0 +1,6 @@
+
+## Main program
+func main()
+return 0
+
+        

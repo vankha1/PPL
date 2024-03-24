@@ -1,0 +1,6 @@
+func main() begin
+			string a <- "Hello"
+			string b <- ",world!"
+			string c <- a ... b
+		end
+		

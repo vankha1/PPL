@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main), [], Block([VarDecl(Id(a), BoolType, None, BinaryOp(and, BinaryOp(and, BinaryOp(or, BooleanLit(True), BooleanLit(False)), BooleanLit(True)), BooleanLit(True))), Return(BinaryOp(or, BooleanLit(True), BooleanLit(False)))]))])

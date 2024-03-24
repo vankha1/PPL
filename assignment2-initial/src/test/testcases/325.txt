@@ -1,0 +1,29 @@
+func findMax(number numbers[5])
+begin
+    var maxNumber <- numbers[0]  ## Assume the first element is the maximum
+
+    ##Iterate through the array starting from the second element
+    for i until size(numbers) by 1
+    begin
+        ## Update maxNumber if the current element is greater
+        if (numbers[i] > maxNumber )
+        begin
+            maxNumber <- numbers[i]  ## Update maxNumber if a greater number is found
+        end
+    end
+
+    ##Return the maximum number found
+    return maxNumber
+end
+
+##Main program
+func main()
+begin
+    ##Define an array of numbers
+    number myArray[5] <- [23, 45, 12, 67, 89]
+
+    ##Call the findMax function and print the result
+    writeNumber(findMax(myArray))
+end
+
+        

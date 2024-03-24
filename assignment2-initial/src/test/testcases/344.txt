@@ -1,0 +1,6 @@
+
+        func returnFoo() return "ahihi"
+        func main() begin
+        string mixedString <- "Numbers: " + (1 + 2) + " Text" + returnFoo()
+        end
+        

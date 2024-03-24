@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(test), [VarDecl(Id(a), NumberType, None, None), VarDecl(Id(c), StringType, None, None)], Block([If((BinaryOp(>, Id(a), NumLit(2.0)), AssignStmt(Id(a), NumLit(3.0))), [(BinaryOp(>, Id(a), NumLit(3.0)), AssignStmt(Id(a), NumLit(4.0)))], AssignStmt(Id(b), NumLit(5.0)))]))])

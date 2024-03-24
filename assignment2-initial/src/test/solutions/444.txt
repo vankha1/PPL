@@ -1,0 +1,1 @@
+Program([VarDecl(Id(x), ArrayType([3.0], NumberType), None, ArrayLit(NumLit(1.0), NumLit(2.0), NumLit(3.0))), VarDecl(Id(a), NumberType, None, BinaryOp(+, BinaryOp(+, ArrayCell(Id(x), [NumLit(0.0)]), ArrayCell(Id(x), [NumLit(1.0)])), ArrayCell(Id(x), [NumLit(2.0)])))])

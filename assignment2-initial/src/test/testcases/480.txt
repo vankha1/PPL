@@ -1,0 +1,9 @@
+func foo1(number N, number i) begin
+			N <- N * i
+		end
+		func main() begin
+			number N <- 2018
+			foo1(N,3)
+			writeNumber(N)
+		end
+		

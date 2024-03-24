@@ -1,0 +1,13 @@
+number x <- 65
+		func y(number x) return x + 1
+		
+		number z <- 65.20
+		func t(number z) return z * 2.0
+
+		func main() begin
+			number y <- y(x)
+			number t <- t(z)
+			writeNumber(y)
+			writeNumber(t)
+		end
+		

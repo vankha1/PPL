@@ -1,0 +1,9 @@
+number i <- 20
+		number j <- 30
+		number k <- 40
+		func main() 
+		begin
+			i <- j + k
+			writeNumber(i)
+		end
+		

@@ -1,0 +1,51 @@
+
+        func isPrime(number num)
+begin
+    if (num <= 1)
+        return false
+    else if (num == 2)
+        return true
+    else if (num % 2 == 0)
+        return false
+
+    ## Check divisibility starting from 3 up to the square root of num
+    for i until i * i <= num by 2
+    begin
+        if (num % i == 0) 
+            return false
+    end
+
+    return true
+end
+
+func printNPrimes(number n)
+begin
+    var count <- 0
+
+    ##Iterate over numbers and check if they are prime
+    for i until count < n by 1
+    begin
+        if (isPrime(i) )
+        begin
+            writeNumber(i)
+            writeString(" ")
+            count <- count + 1
+        end
+    end
+end
+
+## Main program
+func main()
+begin
+    ## Input the number of prime numbers to print
+    writeString("Enter the value of n: ")
+    var n <- readNumber()
+
+    ## Print the first n prime numbers
+    writeString("The first ")
+    writeNumber(n)
+    writeString(" prime numbers are: ")
+    printNPrimes(n)
+end
+
+        

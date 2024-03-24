@@ -1,0 +1,4 @@
+number a <- 1
+		number b <- 2
+		number x <- 1.25
+		

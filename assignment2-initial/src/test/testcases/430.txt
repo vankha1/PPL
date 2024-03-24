@@ -1,0 +1,3 @@
+number i <- 20
+		number j <- 30
+		

@@ -1,0 +1,7 @@
+func foo(number a, number b, number c) begin
+			writeNumber(a + 2 * b + 3 * c)
+		end
+		func main() begin
+			foo(2,3,4)
+		end
+		

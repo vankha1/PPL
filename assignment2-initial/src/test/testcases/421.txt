@@ -1,0 +1,8 @@
+func goo(number a,number b) begin
+			var c <- a + 2 * b
+			writeNumber(c)
+		end
+		func main() begin
+			goo(3,2.7)
+		end
+		

@@ -1,0 +1,5 @@
+var a <- 5
+		number b <- 3.24e-2
+		string c <- "Hello"
+		bool d <- true 
+		

@@ -1,0 +1,9 @@
+func foo2(number a) begin
+			writeString("Test")
+			a <- a + 1
+			writeNumber(a)
+		end
+		func main() begin
+			foo2(10)
+		end
+		

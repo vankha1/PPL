@@ -1,0 +1,8 @@
+func foo(number a[10]) begin
+			return a
+		end
+		number b <- 20
+		func main() begin
+		return
+		end
+		

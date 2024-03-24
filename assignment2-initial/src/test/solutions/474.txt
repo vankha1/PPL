@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo), [VarDecl(Id(a), NumberType, None, None), VarDecl(Id(b), NumberType, None, None)], Block([CallStmt(Id(writeNumber), [BinaryOp(+, Id(a), Id(b))]), Return()]))])

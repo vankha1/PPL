@@ -1,0 +1,5 @@
+func bkool()
+            begin
+                return true
+            end
+        

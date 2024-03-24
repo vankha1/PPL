@@ -1,0 +1,31 @@
+
+func main()
+begin
+    number arr[5] <- [5, 1, 4, 2, 8]
+    var n <- 5
+    dynamic i 
+    dynamic j
+    dynamic temp
+    i<-0
+    for i until i > n-1 by 1
+    begin
+        j<-0
+        for j  until j > n-i-2 by 1
+        begin
+            if (arr[j] > arr[j+1])
+            begin
+                temp <- arr[j]
+                arr[j] <- arr[j+1]
+                arr[j+1] <- temp
+            end
+        end
+    end
+
+    writeString("Sorted Array: ")
+    i<-0
+    for i until i > n-1 by 1
+    begin
+        writeNumber(arr[i])
+    end
+    return
+end

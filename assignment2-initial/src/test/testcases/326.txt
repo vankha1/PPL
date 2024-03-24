@@ -1,0 +1,33 @@
+func swapNumbers(number a, number b)
+begin
+    var temp <- a
+    a <- b
+    b <- temp
+end
+
+## Main program
+func main()
+begin
+    var x <- 5
+    var y <- 10
+
+    writeString("Before swapping: ")
+    writeString("x = ")
+    writeNumber(x)
+    writeString(", y = ")
+    writeNumber(y)
+    writeString("\n")
+
+    ## Call the swapNumbers function to swap x and y
+    swapNumbers(x, y)
+
+    writeString("After swapping: ")
+    writeString("x = ")
+    writeNumber(x)
+    writeString(", y = ")
+    writeNumber(y)
+    writeString("\n")
+end
+
+
+        

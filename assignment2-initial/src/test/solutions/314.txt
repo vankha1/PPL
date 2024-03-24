@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main), [], Block([VarDecl(Id(str), ArrayType([3.0], StringType), None, None)]))])

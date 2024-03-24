@@ -1,0 +1,9 @@
+func inc(number a) return a + 1
+        func main() begin
+        var a <- 1
+        inc(b)
+        if (a > 5) writeNumber("greater than")
+        elif (a == 5) writeNumber("equal")
+        else writeNumber("smaller than")
+        end
+        

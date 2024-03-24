@@ -1,0 +1,1 @@
+Program([VarDecl(Id(a_20), BoolType, None, BinaryOp(<, BinaryOp(<, NumLit(2.0), NumLit(3.0)), NumLit(4.0)))])

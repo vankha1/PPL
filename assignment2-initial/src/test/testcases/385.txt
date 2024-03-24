@@ -1,0 +1,14 @@
+
+func main()
+begin
+    if (true) do()
+    elif (true) do()
+    elif (true) do()
+    elif (true)
+    if (true) do()
+    elif (true)
+    if (true)
+    if (true) do()
+    else do()
+    else do()
+end

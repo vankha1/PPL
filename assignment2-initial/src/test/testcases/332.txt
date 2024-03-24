@@ -1,0 +1,59 @@
+
+        func quickSort(number numbers[1000], number low, number high)
+begin
+    if (low < high)
+    begin
+        ## Partition the array
+        var pivotIndex <- partition(numbers, low, high)
+
+        ## Recursively sort the sub-arrays
+        quickSort(numbers, low, pivotIndex - 1)
+        quickSort(numbers, pivotIndex + 1, high)
+    end
+end
+
+func partition(number numbers[1000], number low, number high)
+begin
+    var pivot <- numbers[high]
+    var i <- low - 1
+
+    for j until high by 1
+    begin
+        if (numbers[j] <= pivot)
+        begin
+            i <- i + 1
+            swap(numbers, i, j)
+        end
+    end
+
+    swap(numbers, i + 1, high)
+    return i + 1
+end
+
+func swap(number numbers[1000], number i, number j)
+begin
+    var temp <- numbers[i]
+    numbers[i] <- numbers[j]
+    numbers[j] <- temp
+end
+
+## Main program
+func main()
+begin
+    ## Example array
+    var arr <- [5, 3, 7, 2, 8, 4]
+
+    ## Perform quicksort
+    quickSort(arr, 0, size(arr) - 1)
+
+    ## Print sorted array
+    writeString("Sorted array: ")
+    for i until size(arr) by 1
+    begin
+        writeNumber(arr[i])
+        if (i < size(arr) - 1)
+            writeString(", ")
+    end
+end
+
+        

@@ -1,0 +1,3 @@
+number a[12,3]
+					number x
+					

@@ -1,0 +1,7 @@
+func fact(number a) begin
+			writeNumber(a + 2018)
+		end
+		func main() begin
+			fact(2018)
+		end
+		

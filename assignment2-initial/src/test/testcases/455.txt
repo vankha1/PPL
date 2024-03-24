@@ -1,0 +1,8 @@
+func perfectNum(number N) begin
+			if ((N == 6) or (N == 28) or (N == 496) or (N == 8128) or (N == 33550336))
+			begin
+				return true
+			end
+			return false
+		end
+		

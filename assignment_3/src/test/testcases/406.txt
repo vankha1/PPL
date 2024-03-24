@@ -1,0 +1,8 @@
+func main()
+            begin
+                number a
+                number b
+                string c
+                bool b
+            end
+            

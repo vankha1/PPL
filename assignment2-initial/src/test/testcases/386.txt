@@ -1,0 +1,2 @@
+
+var a <- foo()[1, 2, 3] + goo(3, 4, "a")[3, 4, 5] - do(true, false)[0]

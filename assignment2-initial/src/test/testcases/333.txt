@@ -1,0 +1,30 @@
+
+        func printPyramid(number height)
+begin
+    ## Iterate through each row of the pyramid
+    for i until height by 1
+    begin
+        ## Print spaces to center the pyramid
+        for j until height - i by 1
+            writeString(" ")
+
+        ## Print '*' characters for the current row
+        for k until 2 * i - 1 by 1
+            writeString("*")
+
+        ## Move to the next line for the next row
+        writeString("\n")
+    end
+end
+
+## Main program
+func main()
+begin
+    ## Input the height of the pyramid from the user
+    writeString("Enter the height of the pyramid: ")
+    var pyramidHeight <- readNumber()
+
+    ## Call the printPyramid function to print the pyramid
+    printPyramid(pyramidHeight)
+end
+        

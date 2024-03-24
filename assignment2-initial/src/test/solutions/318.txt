@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(inc), [VarDecl(Id(a), NumberType, None, None)], Return(BinaryOp(+, Id(a), NumLit(1.0)))), FuncDecl(Id(main), [], Block([VarDecl(Id(a), None, var, NumLit(1.0)), CallStmt(Id(inc), [Id(a)]), If((BinaryOp(>, Id(a), NumLit(5.0)), CallStmt(Id(writeNumber), [StringLit(greater than)])), [], CallStmt(Id(writeNumber), [StringLit(smaller than)]))]))])

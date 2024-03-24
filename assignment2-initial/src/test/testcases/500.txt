@@ -1,0 +1,18 @@
+
+		func main()
+		begin
+			if(calc_score(score)==9)
+			begin
+				printString("idolll :3")
+			end
+			else begin
+				if (calc_score(score)==5)
+				begin
+					printString("vua du qua mon")
+				end
+				else begin
+					printString("doan xem")
+				end
+			end
+		end
+		

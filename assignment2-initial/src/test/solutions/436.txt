@@ -1,0 +1,1 @@
+Program([VarDecl(Id(i), StringType, None, StringLit(Hello,)), VarDecl(Id(j), StringType, None, StringLit('"this '")), VarDecl(Id(k), StringType, None, StringLit('"world!'")), FuncDecl(Id(main), [], Block([AssignStmt(Id(t), BinaryOp(..., Id(i), Id(j))), CallStmt(Id(writeString), [Id(t)])]))])

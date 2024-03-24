@@ -1,0 +1,5 @@
+
+        func main() begin
+        mixedString <- "Numbers: " + (1 + 2) + " Text"
+        end
+        

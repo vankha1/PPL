@@ -1,0 +1,2 @@
+
+number a <- [foo(13), goo(14), abc(25), "abc", [1, 2, 3], true, false, true, 10e-47]

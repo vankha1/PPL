@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo), [VarDecl(Id(n), NumberType, None, None), VarDecl(Id(delta), NumberType, None, None)], Block([AssignStmt(Id(n), BinaryOp(+, Id(n), Id(delta))), Return()]))])

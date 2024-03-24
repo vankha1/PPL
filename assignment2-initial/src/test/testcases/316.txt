@@ -1,0 +1,5 @@
+func inc(number b) return b + 1
+func main() begin
+    for i until 5 by 1 b<- 10
+end
+        

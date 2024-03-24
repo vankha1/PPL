@@ -1,0 +1,11 @@
+
+        func test() begin
+        return true
+        end
+        func main() begin
+        number a[10]
+        a <- a + 1 / 2
+        a[1] <- 1
+        if (1) writeString(test())
+        end
+        

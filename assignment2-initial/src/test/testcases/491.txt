@@ -1,0 +1,4 @@
+func foo(string a, number b) begin
+			return (a ... a[b])
+		end
+		

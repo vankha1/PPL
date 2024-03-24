@@ -1,0 +1,3 @@
+number x <- 20
+		dynamic a <- x + 3.7
+		

@@ -1,0 +1,8 @@
+func foo(number a, number b) begin
+			number i <- a
+			for i until i > b by 1 begin
+				number c <- a + i
+				writeNumber(c)
+			end
+		end
+		

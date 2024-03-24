@@ -1,0 +1,1 @@
+Program([VarDecl(Id(x), NumberType, None, NumLit(20.0)), VarDecl(Id(a), None, dynamic, BinaryOp(+, Id(x), NumLit(3.7)))])

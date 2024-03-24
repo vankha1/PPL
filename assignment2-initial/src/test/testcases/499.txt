@@ -1,0 +1,6 @@
+func goo() begin
+            for i until i >= N by 1 begin
+                s <- 1
+            end
+        end
+        

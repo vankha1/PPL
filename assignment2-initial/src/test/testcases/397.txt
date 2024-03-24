@@ -1,0 +1,11 @@
+
+func main() 
+begin 
+    number a<- readNumber()
+    if (a>0) 
+        if (a%2 = 0) 
+            begin
+            end
+        else if (a<50) return
+            elif (a<100) return
+end

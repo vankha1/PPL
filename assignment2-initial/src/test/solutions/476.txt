@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo), [], Block([If((BooleanLit(True), Block([If((UnaryOp(not, BooleanLit(True)), Block([])), [], Return())])), [], None), Return()]))])

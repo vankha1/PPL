@@ -1,0 +1,6 @@
+
+func main()
+begin
+    bool a <- true or false and true and true
+    return true or false
+end

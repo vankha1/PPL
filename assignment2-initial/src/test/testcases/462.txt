@@ -1,0 +1,17 @@
+func foo(number a) begin
+			if (a > 220) begin
+				if (a % 2 == 0)
+				begin
+					return a
+				end
+				else
+				begin
+					return a + 1
+				end
+			end
+			else
+			begin
+				return a + 10
+			end
+		end
+		

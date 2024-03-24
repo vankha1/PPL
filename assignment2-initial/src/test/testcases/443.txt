@@ -1,0 +1,3 @@
+number a <- 20
+					var b <- a
+					

@@ -1,0 +1,7 @@
+
+## Main program
+func main()
+begin
+return true
+end
+        

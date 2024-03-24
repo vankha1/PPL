@@ -1,0 +1,28 @@
+func calculateSum(number numbers[100])
+begin
+    var sum <- 0
+
+    ## Iterate through the array and add each element to the sum
+    for i until i < size(numbers) by 1
+    begin
+        sum <- sum + numbers[i]
+    end
+
+    ## Return the sum
+    return sum
+end
+
+## Main program
+func main()
+begin
+    number myArray[5] <- [1, 2, 3, 4, 5]
+
+    ## Call the calculateSum function to calculate the sum of elements in myArray
+    var result <- calculateSum(myArray)
+
+    ## Print the result
+    writeString("The sum of all elements in the array is: ")
+    writeNumber(result)
+end
+
+        

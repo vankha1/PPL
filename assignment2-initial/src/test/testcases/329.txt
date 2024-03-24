@@ -1,0 +1,28 @@
+func calculateAverage(number num1, number num2)
+begin
+    var average <- (num1 + num2) / 2.0  ## Calculate the average
+    return average
+end
+
+## Main program
+func main()
+begin
+    ## Input two numbers
+    writeString("Enter the first number: ")
+    var input1 <- readNumber()
+    
+    writeString("Enter the second number: ")
+    var input2 <- readNumber()
+
+    ## Call the calculateAverage function to calculate the average
+    var avg <- calculateAverage(input1, input2)
+
+    ## Print the average
+    writeString("The average of ")
+    writeNumber(input1)
+    writeString(" and ")
+    writeNumber(input2)
+    writeString(" is: ")
+    writeNumber(avg)
+end
+        

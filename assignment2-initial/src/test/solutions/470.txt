@@ -1,0 +1,1 @@
+Program([VarDecl(Id(x), None, var, NumLit(2.0)), VarDecl(Id(y), None, var, BooleanLit(False)), VarDecl(Id(z), None, var, BooleanLit(True)), VarDecl(Id(t), None, var, StringLit(It's me '"Hello'" )), VarDecl(Id(u), None, dynamic, UnaryOp(-, NumLit(1e+23)))])

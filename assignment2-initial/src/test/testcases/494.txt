@@ -1,0 +1,16 @@
+func main() begin
+			number a[2,2]
+			number i <- 0
+			number j <- 0
+			for i until i >= 2 by 1 begin
+				for j until j >= 2 by 1 begin
+					a[i,j] <- readNumber()
+				end
+			end
+			for i until i >= 2 by 1 begin
+				for j until j >= 2 by 1 begin
+					writeNumber(a[i,j])
+				end
+			end
+		end
+		

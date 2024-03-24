@@ -1,0 +1,6 @@
+
+func main()
+begin
+    dynamic b <- "abc"
+    return [1, [[2, 3]], [3, 4, 5], [[6, 7, [8, 9]]]]
+end

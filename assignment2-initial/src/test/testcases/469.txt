@@ -1,0 +1,5 @@
+var x <- 2
+		var y <- false
+		var z <- true
+		var t <- "It's me '"Hello'" "
+		

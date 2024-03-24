@@ -1,0 +1,35 @@
+
+        func isPalindrome(string str)
+begin
+    var length <- size(str)
+
+    ## Iterate over the string using a for loop
+    for i until length / 2 by 1
+    begin
+        ##Compare characters from both ends of the string
+        if (str[i] != str[length - 1 - i])
+            return false
+    end
+
+    ## If the loop completes without finding a mismatch, it's a palindrome
+    return true
+end
+
+## Main program
+func main()
+begin
+    ## Input a string from the user
+    writeString("Enter a string: ")
+    var inputString <- readString()
+
+    ## Check if the input string is a palindrome
+    var isPal <- isPalindrome(inputString)
+
+    ## Print the result
+    if (isPal)
+        writeString("The string is a palindrome.")
+    else
+        writeString("The string is not a palindrome.")
+end
+
+        

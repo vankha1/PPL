@@ -1,0 +1,6 @@
+number x
+		func foo() begin 
+			return 0
+		end
+		number a <- 10
+		

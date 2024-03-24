@@ -1,0 +1,35 @@
+
+        func calculateBMI(number weight, number height)
+begin
+    var bmi <- weight / (height * height)
+    return bmi
+end
+
+## Main program
+func main()
+begin
+    ## Input name, age, weight, and height from the user
+    writeString("Enter your name: ")
+    var name <- readString()
+    
+    writeString("Enter your age: ")
+    var age <- readNumber()
+    
+    writeString("Enter your weight (in kilograms): ")
+    var weight <- readNumber()
+    
+    writeString("Enter your height (in meters): ")
+    var height <- readNumber()
+
+    ## Call the calculateBMI function to calculate the BMI
+    var bmi <- calculateBMI(weight, height)
+
+    ## Print the BMI along with name and age
+    writeString(name)
+    writeString(", aged ")
+    writeNumber(age)
+    writeString(", your BMI is: ")
+    writeNumber(bmi)
+end
+
+        

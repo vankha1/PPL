@@ -1,0 +1,34 @@
+
+        func findGCD(number a, number b)
+begin
+    ## Base case: if b is 0, then GCD is a
+    if (b = 0)
+        return a
+    
+    ## Recursive case: find GCD(b, a % b)
+    return findGCD(b, a % b)
+end
+
+## Main program
+func main()
+begin
+    ## Input two numbers from the user
+    writeString("Enter the first number: ")
+    var num1 <- readNumber()
+    
+    writeString("Enter the second number: ")
+    var num2 <- readNumber()
+
+    ## Call the findGCD function to calculate the GCD
+    var gcd <- findGCD(num1, num2)
+
+    ## Print the GCD
+    writeString("The GCD of ")
+    writeNumber(num1)
+    writeString(" and ")
+    writeNumber(num2)
+    writeString(" is: ")
+    writeNumber(gcd)
+end
+
+        

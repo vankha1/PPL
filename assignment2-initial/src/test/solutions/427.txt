@@ -1,0 +1,1 @@
+Program([VarDecl(Id(a), ArrayType([3.0, 4.0, 5.0], NumberType), None, None), VarDecl(Id(x), NumberType, None, UnaryOp(-, NumLit(2.95)))])

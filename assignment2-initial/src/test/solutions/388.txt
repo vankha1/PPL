@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main), [], Block([CallStmt(Id(print), [StringLit(Hello world)]), Return(NumLit(0.0))]))])

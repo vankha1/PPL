@@ -1,0 +1,9 @@
+string i <- "Hello,"
+		string j <- "'"this '""
+		string k <- "'"world!'""
+		func main()
+		begin
+			t <- i ... j
+			writeString(t)
+		end
+		

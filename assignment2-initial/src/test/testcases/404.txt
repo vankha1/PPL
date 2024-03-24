@@ -1,0 +1,5 @@
+func foo(number n,number delta) begin
+			n <- n + delta
+			return
+		end
+		

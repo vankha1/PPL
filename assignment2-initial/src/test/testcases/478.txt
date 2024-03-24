@@ -1,0 +1,8 @@
+func foo(number a[10]) begin
+			number i <- 0
+			for i until i >= 10 by 1 begin
+				a[i] <- a[i] * 2 + 1
+			end
+			return a
+		end
+		

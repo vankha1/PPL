@@ -1,0 +1,11 @@
+func inc(number a) return a + 1
+        func main() begin
+        var a <- 1
+        inc(b)
+        if (a > 5) writeNumber("a is greater than 5")
+        elif (a == 5) writeNumber("a is equal to 5")
+        else for a until 10 by 2*3 - 5
+                for b until 100 by a
+                    var c <- a*b
+        end
+        

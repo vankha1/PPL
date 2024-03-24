@@ -1,0 +1,10 @@
+func foo(number a) begin
+			a <- a + (-2018)
+			return a
+		end
+		func main() begin
+			number a <- 2018
+			a <- a + foo(a)
+			readNumber()
+		end
+		

@@ -1,0 +1,7 @@
+
+func main()
+begin 
+    dynamic for_ 
+    var var_  <- for_ 
+    if(var_) for_<-1
+end

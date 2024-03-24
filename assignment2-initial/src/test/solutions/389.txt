@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main), [], Block([VarDecl(Id(b), None, dynamic, StringLit(abc)), Return(ArrayLit(NumLit(1.0), ArrayLit(ArrayLit(NumLit(2.0), NumLit(3.0))), ArrayLit(NumLit(3.0), NumLit(4.0), NumLit(5.0)), ArrayLit(ArrayLit(NumLit(6.0), NumLit(7.0), ArrayLit(NumLit(8.0), NumLit(9.0))))))]))])

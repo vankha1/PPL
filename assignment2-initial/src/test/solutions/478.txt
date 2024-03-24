@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo), [VarDecl(Id(a), ArrayType([10.0], NumberType), None, None)], Block([VarDecl(Id(i), NumberType, None, NumLit(0.0)), For(Id(i), BinaryOp(>=, Id(i), NumLit(10.0)), NumLit(1.0), Block([AssignStmt(ArrayCell(Id(a), [Id(i)]), BinaryOp(+, BinaryOp(*, ArrayCell(Id(a), [Id(i)]), NumLit(2.0)), NumLit(1.0)))])), Return(Id(a))]))])

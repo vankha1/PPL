@@ -1,0 +1,4 @@
+number a <- 12.
+		number b <- 12e-4
+		number c <- 0.23E+7
+		

@@ -1,0 +1,10 @@
+func inc(number a) return a + 1
+        func main() begin
+        var a <- 1
+        inc(b)
+        if (a > 5) writeNumber("greater than")
+        elif (a == 5) writeNumber("equal")
+        else for a until 10 by 2*3 - 5
+            writeString("dungruinha")
+        end
+        

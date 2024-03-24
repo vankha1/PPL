@@ -1,0 +1,5 @@
+func foo (number a) begin
+			somefunc(b,c)
+			return a + (-2018)
+		end
+		

@@ -1,0 +1,9 @@
+string i <- "20"
+		string j <- "30"
+		string k <- "40"
+		func main() 
+		begin
+			k <- j ... (i ... t)
+			writeString(k)
+		end
+		

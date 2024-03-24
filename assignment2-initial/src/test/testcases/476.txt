@@ -1,0 +1,10 @@
+func foo() begin
+			if (true) begin
+				if (not true) begin
+					
+				end
+				else return
+			end
+			return
+		end
+		

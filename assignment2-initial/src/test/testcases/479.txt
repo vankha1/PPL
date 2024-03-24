@@ -1,0 +1,9 @@
+func foo(number N, number i) begin
+			number j <- 0
+			for j until j >= i by 1 begin
+				if (N % j == 0) begin
+					N <- N - j
+				end
+			end
+		end
+		

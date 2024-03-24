@@ -1,0 +1,4 @@
+number i <- 20
+		number j <- 30
+		number k <- 12.3E-2
+		

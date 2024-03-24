@@ -1,0 +1,9 @@
+number a <- 20
+		func foo (number a) begin
+			a <- a + 10
+		end
+		func main() begin
+			foo(a_int)
+			writeNumber(a_int)
+		end
+		

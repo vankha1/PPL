@@ -1,0 +1,1 @@
+Program([VarDecl(Id(a), StringType, None, None), VarDecl(Id(x), NumberType, None, None)])

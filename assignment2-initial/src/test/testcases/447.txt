@@ -1,0 +1,12 @@
+number x
+		number y
+		bool z
+		func goo(number x,number y) begin
+		
+		end
+		number t[10]
+		func foo() begin
+			
+		end
+		string a <- "Hello World"
+		

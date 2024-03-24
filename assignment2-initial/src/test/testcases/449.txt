@@ -1,0 +1,4 @@
+func foo1(number a) begin
+			super(x,y,z)
+		end
+		

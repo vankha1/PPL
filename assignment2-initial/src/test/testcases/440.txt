@@ -1,0 +1,4 @@
+number i <- 123.45
+		number j <- 2.87e+22
+		number k <- 2500000000.0
+		

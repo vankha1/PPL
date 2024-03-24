@@ -1,0 +1,42 @@
+func findMinimum(number num1, number num2, number num3)
+begin
+    var minNumber <- num1  ## Assume num1 is the minimum
+    
+    ## Check if num2 is smaller than minNumber
+    if (num2 < minNumber) 
+        minNumber <- num2
+    
+    ## Check if num3 is smaller than minNumber
+    if (num3 < minNumber)
+        minNumber <- num3
+
+    return minNumber
+end
+
+## Main program
+func main()
+begin
+    ## Input three numbers
+    writeString("Enter the first number: ")
+    var input1 <- readNumber()
+    
+    writeString("Enter the second number: ")
+    var input2 <- readNumber()
+
+    writeString("Enter the third number: ")
+    var input3 <- readNumber()
+
+    ## Call the findMinimum function to find the minimum among the inputs
+    var min <- findMinimum(input1, input2, input3)
+
+    ## Print the minimum number
+    writeString("The minimum number among ")
+    writeNumber(input1)
+    writeString(", ")
+    writeNumber(input2)
+    writeString(" and ")
+    writeNumber(input3)
+    writeString(" is: ")
+    writeNumber(min)
+end
+        

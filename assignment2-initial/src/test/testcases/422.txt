@@ -1,0 +1,12 @@
+func goo(string a,number N) begin
+			number i
+			string s <- ""
+			for i until i >= N by 1 begin
+				s <- s ... a[i]
+			end
+			return s
+		end
+		func main() 
+		begin
+		end
+		

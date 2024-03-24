@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main), [], Block([If((BooleanLit(True), If((BooleanLit(True), If((BooleanLit(True), CallStmt(Id(do), [])), [], CallStmt(Id(do), []))), [], None)), [], None)]))])

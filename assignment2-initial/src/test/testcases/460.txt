@@ -1,0 +1,17 @@
+func main() begin
+			number a[100]
+			number i <- 0
+			number n
+			for i until i >= n by 1 begin
+				a[i] <- readNumber()
+				if (a[i] % 2 == 0)
+				begin
+					a[i] <- a[i] / 2
+				end
+				else
+				begin
+					a[i] <- a[i] * 3 + 1
+				end
+			end
+		end
+		

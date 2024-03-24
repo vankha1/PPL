@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main1), [], None), FuncDecl(Id(main2), [], None), FuncDecl(Id(main3), [], None), FuncDecl(Id(main4), [], None), FuncDecl(Id(main5), [], None), FuncDecl(Id(main6), [], None), FuncDecl(Id(main7), [], None), FuncDecl(Id(main8), [], None), FuncDecl(Id(main9), [], None), FuncDecl(Id(main10), [], None)])

@@ -1,0 +1,6 @@
+
+func main()
+begin
+    string s <- "well well well"
+    return "abcxyz'""
+end

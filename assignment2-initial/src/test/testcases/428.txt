@@ -1,0 +1,9 @@
+number a[2]
+		number b[2]
+		func main() begin
+			a[0] <- 2018
+			a[1] <- -2018
+			b[0] <- a[0] + a[1]
+			b[1] <- a[0] - a[1]
+		end
+		

@@ -1,0 +1,4 @@
+func foo(number a[3]) begin
+			return a
+		end
+		

@@ -1,0 +1,10 @@
+
+number a
+number b
+number c
+string d
+string e
+string f
+bool g
+bool h
+bool i

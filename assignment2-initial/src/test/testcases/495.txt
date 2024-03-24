@@ -1,0 +1,6 @@
+func test(number a, string c) 
+						begin
+						if (a > 2) a <- 3
+						elif (a > 3) a <- 4
+						end
+		

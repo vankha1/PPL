@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo), [VarDecl(Id(N), NumberType, None, None), VarDecl(Id(i), NumberType, None, None)], Block([VarDecl(Id(j), NumberType, None, NumLit(0.0)), For(Id(j), BinaryOp(>=, Id(j), Id(i)), NumLit(1.0), Block([If((BinaryOp(==, BinaryOp(%, Id(N), Id(j)), NumLit(0.0)), Block([AssignStmt(Id(N), BinaryOp(-, Id(N), Id(j)))])), [], None)]))]))])

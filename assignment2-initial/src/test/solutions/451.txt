@@ -1,0 +1,1 @@
+Program([VarDecl(Id(i), StringType, None, StringLit(20)), VarDecl(Id(j), StringType, None, StringLit(30)), VarDecl(Id(k), StringType, None, StringLit(40)), FuncDecl(Id(main), [], Block([AssignStmt(Id(k), BinaryOp(..., Id(j), BinaryOp(..., Id(i), Id(t)))), CallStmt(Id(writeString), [Id(k)])]))])

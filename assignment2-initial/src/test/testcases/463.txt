@@ -1,0 +1,8 @@
+func foo() begin
+			if (a < b)
+				if (c < d)
+					writeString("True")
+				else
+					writeString("False")
+		end
+		

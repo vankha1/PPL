@@ -1,0 +1,14 @@
+number x <- 2018
+		func fibo(number n) begin
+			if (n <= 1) return 1
+			else return fibo(n - 1) + fibo(n - 2)
+	end
+		func decr(number n, number delta) begin
+			n <- n - delta
+		end
+		func main() begin
+			number delta <- fact(100)
+			decr(x,delta)
+			writeNumber(x)
+		end
+		

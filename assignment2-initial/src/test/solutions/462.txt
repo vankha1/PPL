@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(foo), [VarDecl(Id(a), NumberType, None, None)], Block([If((BinaryOp(>, Id(a), NumLit(220.0)), Block([If((BinaryOp(==, BinaryOp(%, Id(a), NumLit(2.0)), NumLit(0.0)), Block([Return(Id(a))])), [], Block([Return(BinaryOp(+, Id(a), NumLit(1.0)))]))])), [], Block([Return(BinaryOp(+, Id(a), NumLit(10.0)))]))]))])

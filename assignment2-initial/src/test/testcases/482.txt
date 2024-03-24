@@ -1,0 +1,13 @@
+func foo1(string s, number N) begin
+			number i <- 0
+			for i until i >= N / 2 by 1 begin
+				string temp <- s[N - i - 1]
+				s[N - i - 1] <- s[i]
+				s[i] <- temp
+			end
+			writeString(s)
+		end
+		func main() begin
+			foo1("Hello,this is me",17)
+		end
+		

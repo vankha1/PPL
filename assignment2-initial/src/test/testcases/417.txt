@@ -1,0 +1,8 @@
+number x
+		func foo () begin
+			return 0
+		end
+		func goo () begin
+			string i
+		end
+		

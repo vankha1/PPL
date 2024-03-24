@@ -1,0 +1,5 @@
+func foo(number a, number b) begin
+			writeNumber(a + b)
+			return
+		end
+		
