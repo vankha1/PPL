@@ -1,1 +1,1 @@
-Type Mismatch In Expression: BinaryOp(+, CallExpr(Id(foo), []), NumLit(2.0))
+Undeclared Function: g

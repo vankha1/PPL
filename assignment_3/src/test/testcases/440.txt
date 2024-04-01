@@ -1,10 +1,6 @@
 
-        func main()
-        begin
-            number a
-            bool b
-            bool c
-            b <- (b and c) or c ## valid
-            b <- a and b ## invalid: a and b
-        end
-            
+func f()
+begin
+    dynamic x
+    x <- (x - 2) * (x + true)
+end

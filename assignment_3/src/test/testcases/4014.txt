@@ -1,0 +1,14 @@
+
+        func f(number y)
+        func main() 
+        begin
+            number y <- f(4)
+            writeNumber(x)
+        end
+        
+        func f (number y)
+        begin
+            if (y >= 2) return f(y-1) + f(y-2)
+            return 1
+        end
+        

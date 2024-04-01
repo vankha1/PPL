@@ -1,5 +1,4 @@
-func bkool()
-            begin
-                return true
-            end
+
+        dynamic t
+        var a <- [[1,2],[1,t],[1,2,3]]
         

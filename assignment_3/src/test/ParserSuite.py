@@ -5,15 +5,16 @@ from TestUtils import TestParser
 class ParserSuite(unittest.TestCase):
     def test_simple_program(self):
         """Simple program: int main() {} """
-        input = """func foo()
-        func main()
+        input = """func main()
         begin
-            number a
-            a <- foo() + 5
-        end
-        func foo()
-        begin
-           return 1
+            bool b
+            number i
+            if (b)
+            begin
+            end
+            elif (i)
+            begin 
+            end
         end
         """
         expect = "successful"

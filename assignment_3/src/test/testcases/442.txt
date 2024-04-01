@@ -1,12 +1,7 @@
 
-        func foo()
-        func main()
-        begin
-            number a <- 2
-            a <- foo() + 2
-        end
-        func foo()
-        begin
-            return
-        end
-            
+func f()
+
+func main()
+begin
+    number x <- g(1, 2, 3)
+end

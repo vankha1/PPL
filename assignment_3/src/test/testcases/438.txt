@@ -1,10 +1,8 @@
 
-        func main()
-        begin
-            dynamic a
-            dynamic b
-            a <- 1
-            dynamic c
-            c <- a + b
-        end
-            
+func main()
+begin
+    dynamic x
+    if (x) writeString("x is infer to true value")
+    else writeString("x is infer to false value")
+    x <- not (true and not false) and not (false and not true)
+end

@@ -1,6 +1,6 @@
 func main() begin
             end
-             number c
+            number c
             func c() begin
             end
             

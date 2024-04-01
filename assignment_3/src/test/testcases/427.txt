@@ -1,19 +1,14 @@
 
-        func foo()
-        begin
-            return 1
-        end
-        
-        func check()
-        begin
-            return 2
-        end
-        
-        func main()
-        begin
-            number a
-            begin
-                a <- foo() + 5
-            end
-        end
-            
+func add(number x, number y)
+
+func main()
+begin
+    number x <- readNumber()
+    number y <- readNumber()
+    writeNumber(pow(x, y))
+end
+
+func add(number a, number b)
+begin
+    return a + b
+end

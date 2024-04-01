@@ -1,1 +1,1 @@
-Type Mismatch In Expression: BinaryOp(and, Id(a), Id(b))
+Type Mismatch In Expression: BinaryOp(+, Id(x), BooleanLit(True))

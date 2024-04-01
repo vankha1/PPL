@@ -1,1 +1,1 @@
-Type Mismatch In Expression: UnaryOp(not, Id(a))
+Type Mismatch In Expression: BinaryOp(+, NumLit(1.0), BooleanLit(True))

@@ -1,0 +1,9 @@
+
+        func main()
+        begin
+            number x <- readNumber()
+            if (x <= 5) writeString("Number is smaller or equal 5")
+            elif ((x < 5) and (x <= 10)) writeString("Number between 5 and 10")
+            else writeString("Number greater than 10")
+        end
+        
