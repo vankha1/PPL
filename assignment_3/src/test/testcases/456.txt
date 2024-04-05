@@ -1,9 +1,10 @@
 
-func main()
-begin
-    dynamic a
-    dynamic b
-    dynamic c
-    var arr <- [[a], [b], [c], [1]]
-    arr <- [[1], [2], [3], [4]]
-end
+        func main()
+        begin
+            bool b <- true
+            dynamic i <- 0
+            for i until i<10 by i<10
+            begin
+            end
+        end
+            

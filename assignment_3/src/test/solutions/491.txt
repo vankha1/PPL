@@ -1,1 +1,1 @@
-Type Mismatch In Statement: AssignStmt(Id(b), Id(d))
+Type Cannot Be Inferred: VarDecl(Id(x), NumberType, None, ArrayCell(Id(a), [NumLit(1.0)]))

@@ -1,1 +1,1 @@
-Type Mismatch In Statement: AssignStmt(Id(a), ArrayLit(Id(b)))
+No Entry Point

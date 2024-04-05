@@ -1,9 +1,7 @@
 
-func f()
-begin
-
-end
-dynamic a
-number b
-bool c
-string d
+        func main()
+        begin
+            number a[5]
+            a <- [1,"2.0"]
+        end
+            

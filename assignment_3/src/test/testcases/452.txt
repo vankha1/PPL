@@ -1,11 +1,18 @@
 
-func add(number x, number y)
-
-func main()
-begin
-    dynamic a
-    a[0] <- [1,2,3] 
-end
-
-func add(number x, number y)
-    return "Hello"
+        func main()
+        begin
+            bool b1
+            bool b2
+            number i1
+            number i2
+            if(i1 = i2)
+            begin
+            end
+            if(i1)
+            begin
+            end
+            if(b1)
+            begin
+            end
+        end
+            

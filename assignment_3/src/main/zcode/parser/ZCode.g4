@@ -1,197 +1,186 @@
-// 2110264
+// 2111056
+// Nguyen Minh Diem
 grammar ZCode;
-
 @lexer::header {
+2111056
 from lexererr import *
 }
-
 options {
-	language = Python3;
+	language=Python3;
 }
+program: newline_list decl_list EOF ;
+decl_list: decl decl_list | decl;
+decl: func_decl | var_decl_full;
+var_decl_full: var_decl nonnull_newline;
+func_decl: FUNC IDENTIFIER LB parameter_list RB (newline_list function_body)? nonnull_newline;
+function_body: block_stmt | return_stmt;
 
-program: NEW_LINE* decllist EOF;
-decllist: decl decllist | decl;
-decl: vardecl | funcdecl;
+statement_list: nonnull_statement | ;
+nonnull_statement: statement_full nonnull_statement | statement_full;
+statement_full: stmt nonnull_newline;
 
-// Variable ----------------
-vardecl: (vardecl_not_full | vardecl_full | vardecl_array) NEW_LINE+;
-vardecl_full: VAR ID ASSIGN exp;
-vardecl_not_full: (atomic_types | DYNAMIC) ID (ASSIGN exp)?;
-vardecl_array: atomic_types ID dimensions (ASSIGN array_lit)?;
+elif_list: elif_stmt elif_list | ;
+elif_stmt: nonnull_newline ELIF (LB expression1 RB)  newline_list all_stmt ;
+stmt: var_decl
+	| (arr_ele|IDENTIFIER) ASS expression1
+	| block_stmt
+	| return_stmt
+	| IF (LB expression1 RB ) newline_list all_stmt elif_list (nonnull_newline ELSE newline_list all_stmt)?   // cau lenh if
+	| FOR IDENTIFIER UNTIL expression1 BY expression1 newline_list all_stmt  // cau lenh FOR
+	| BREAK 
+	| CONT
+	| IDENTIFIER LB argurment_list RB;
+all_stmt: block_stmt | return_stmt | stmt;
+block_stmt: BEGIN nonnull_newline statement_list END ;                       // statement_list có thể null
+return_stmt: RETURN ((LB expression1 RB)| expression1)?;
+parameter_list: nonnull_parameter| ;
+nonnull_parameter: parameter COMMA nonnull_parameter | parameter;
+parameter: pri_type (IDENTIFIER|arr_type);
+var_decl: varkey_decl | dykey_decl | prikey_decl;
+varkey_decl: VAR IDENTIFIER ASS expression1; 					// sau phep gan chi duoc co IDENTIFIER
+dykey_decl: DYNAMIC IDENTIFIER (ASS expression1)?;				// sau phep gan chi duoc co IDENTIFIER
+prikey_decl: pri_type (arr_type| IDENTIFIER) (ASS expression1)?;
+pri_type: BOOL| NUMBER|STRING_DEF;
+arr_type: IDENTIFIER LBRACE numlit_list RBRACE;
+numlit_list: NUMBER_LIT COMMA numlit_list | NUMBER_LIT;
+arr_value: (LBRACE index_operators RBRACE) ;                  // các thành phần của một mảng , có thể rỗng
+expression1: expression2 CON expression2 | expression2;
+expression2: expression3 ( DIF 
+				|  BGOE 
+				|  SMOE 
+				|  BG 
+				|  SM 
+				|  EQUAL_NUM 
+				|  EQUAL_STR) expression3
+				| expression3 ;
+expression3: expression3 (OR|AND) expression4 | expression4;
+expression4: expression4 (MINUS|ADD) expression5 | expression5;
+expression5: expression5 (DIV|MUL|MOD) expression6 | expression6;
+expression6: NOT expression6 | expression7 ; 								// toán tử một ngôi 'not'
+expression7: MINUS expression7 | expression8;								// toán tử một ngôi dấu '-'
+expression8: acc_arr | expression9 ;        // phép toán truy cập mảng
+expression9: LB expression1 RB | expression10;
+expression10: function_call | IDENTIFIER | NUMBER_LIT | BOOL_LIT | STR_LIT | arr_value;
+	   
 
-// Function -----------------
-funcdecl: FUNC ID LP param_list RP NEW_LINE* (NEW_LINE | block_stmt | return_stmt);
-// func_prototype: FUNC ID LP param_list RP NEW_LINE*;
-// func_body: block_stmt | return_stmt;
+// truy cap mang
+acc_arr: arr_ele|arr_expr;
+arr_ele: IDENTIFIER LBRACE index_operators RBRACE;
+arr_expr:function_call LBRACE index_operators RBRACE;
 
-param_list: param_prime |;
-param_prime: paramdecl COMMA param_prime | paramdecl;
-paramdecl: atomic_types ID dimensions?;
+// index operator
+index_operators: expression1 
+				| expression1 (COMMA index_operators);
 
-// Statements -----------------
-stmt:
-	(
-		vardecl
-		| assign_stmt
-		| if_stmt
-		| for_stmt
-		| block_stmt
-		| break_stmt
-		| continue_stmt
-		| return_stmt
-		| call_stmt
-	);
-assign_stmt: lhs ASSIGN exp NEW_LINE+;
+// lời gọi hàm
+function_call: IDENTIFIER LB argurment_list RB;
+argurment_list: nonnull_argurment | ;
+nonnull_argurment: argurment COMMA nonnull_argurment | argurment;
+argurment: IDENTIFIER
+        |expression1;
+// danh sách expression cách nhau bởi dấu phẩy  (trùng với index_operator ở trên)
+//expression_list: expression1 COMMA expression_list | expression1;
+// chuỗi xuống hàng
+newline_list: nonnull_newline| ;
+nonnull_newline: NEWLINE nonnull_newline | NEWLINE;
+//fragment support
+fragment TRUE: 'true';
+fragment FALSE: 'false';
+fragment DIGIT: [0-9];
+fragment LETTER: [a-zA-Z];
+fragment STRING: LETTER*;
+fragment ESC: '\\' ('b'|'f'|'r'|'n'|'t'|'\''|'\\') ;
+fragment ILLEGAL_ESC: '\\' ~('b'|'f'|'r'|'n'|'t'|'\''|'\\');
+fragment INTEGER: DIGIT+;
 
-if_stmt: IF sub_exp newline_list stmt (elif_stmt)* (else_stmt)?;
-elif_stmt: ELIF sub_exp newline_list stmt;
-else_stmt:  ELSE NEW_LINE* stmt;
+fragment DECIMAL: DIGIT*;
+fragment EXP: [e|E] ('+'|'-')? DIGIT+ ;
 
-for_stmt: FOR ID UNTIL exp BY exp newline_list stmt;
+fragment ARR_DIM_EXPA: ',' DIGIT ;
+fragment ARR_STR_EXPA: ',' LETTER+;
+fragment ARR_NUM_EXPA: ',' NUMBER_LIT;
+fragment ARR_BOOL_EXPA: ',' BOOL_LIT;
 
-break_stmt: BREAK NEW_LINE+;
-continue_stmt: CONTINUE NEW_LINE+;
-return_stmt: RETURN (exp)? NEW_LINE+;
-call_stmt: ID LP expr_list RP NEW_LINE+;
-block_stmt: BEGIN NEW_LINE+ blocked_list END NEW_LINE+;
-blocked_list: stmt_plus_vardecl blocked_list |;
-// blocked_list_prime: stmt_plus_vardecl blocked_list_prime | stmt_plus_vardecl;
-stmt_plus_vardecl: (stmt | vardecl);
 
-lhs: ID index_operator?;
-
-// Expression -----------------
-exp: exp0;
-expr_list: exprprime |;
-exprprime: exp COMMA exprprime | exp;
-
-exp0: exp1 CONCAT exp1 | exp1;
-exp1:
-	exp2 (
-		EQUAL
-		| NOT_SAME
-		| SAME
-		| LESS_THAN
-		| LESS_THAN_EQUAL
-		| GREATER_THAN
-		| GREATER_THAN_EQUAL
-	) exp2
-	| exp2;
-exp2: exp2 (AND | OR) exp3 | exp3;
-exp3: exp3 (ADD | SUB) exp4 | exp4;
-exp4: exp4 (MUL | DIV | MOD) exp5 | exp5;
-exp5: NOT exp5 | exp6;
-exp6: SUB exp6 | exp7;
-exp7:
-	ID
-	| constant
-	| func_call index_operator?
-	| sub_exp
-	| index_expr;
-
-func_call: ID LP expr_list RP;
-constant: NUMBER_LIT | BOOL_LIT | STRING_LIT | array_lit;
-sub_exp: LP exp RP;
-
-index_expr: ID index_operator;
-index_operator: LS exprprime RS;
-
-// Array -------------------
-array_lit: LS non_empty_expr_list RS;
-non_empty_expr_list: exp COMMA non_empty_expr_list | exp;
-array_type: atomic_types ID dimensions;
-dimensions: LS number_lits RS;
-number_lits: NUMBER_LIT COMMA number_lits | NUMBER_LIT;
-atomic_types: BOOL | NUMBER | STRING;
-
-// Literal -----------------
-BOOL_LIT: TRUE | FALSE;
-
-NUMBER_LIT: INT_LIT DEC_PART? EXP_PART? | INT_LIT EXP_PART ;
-
-fragment INT_LIT: '0' | [1-9]([0-9])*;
-
-fragment DEC_PART: '.' ([0-9])*;
-fragment EXP_PART: [eE] [+-]? ([0-9])+;
-
-// number_lit: FLOAT_LIT | INT_LIT;
-
-STRING_LIT:
-	'"' (ESC | ~[\\\n"] | '\'"')* '"' {self.text = self.text[1:-1]};
-
-fragment ESC: '\\' [bfrnt'\\];
-fragment ILLEGAL_ESC: '\\' ~[bfrnt'\\];
-
-// fragment NL: [\r\n] ;
-
-LP: '(';
-RP: ')';
-LS: '[';
-RS: ']';
-COMMA: ',';
-
-// DOT: '.'; SEMI: ';'; COLON: ':'; LC: '{'; RC: '}';
-
-ADD: '+';
-SUB: '-';
-MUL: '*';
-DIV: '/';
-MOD: '%';
-EQUAL: '=';
-ASSIGN: '<-';
-NOT_SAME: '!=';
-LESS_THAN: '<';
-LESS_THAN_EQUAL: '<=';
-GREATER_THAN_EQUAL: '>=';
-GREATER_THAN: '>';
-CONCAT: '...';
-SAME: '==';
-
-TRUE: 'true';
-FALSE: 'false';
+// program comment
+CMT: '##' (~('\n'|'\f'|'\r'))*->skip;
+// escape character
+WS : ('\t'|' '|'\f'|'\b')+ -> skip ; // skip spaces, tabs, newlines
+//BSP: '\b' ;					// backspace character
+NEWLINE:'\r'| ('\r'? '\n') {
+	if (len(self.text)==2):
+		self.text = self.text[-1]
+     };     // newline character
+// FORMFEED: '\f'{
+// 	print("formfeed:", len(self.text));
+// };
+// CARIAGE_RETURN: '\r'{
+// 	print("carriage:", len(self.text));
+// };
+// keywords
 NUMBER: 'number';
 BOOL: 'bool';
-STRING: 'string';
+STRING_DEF: 'string';
 RETURN: 'return';
 VAR: 'var';
 DYNAMIC: 'dynamic';
-FUNC: 'func';
+FUNC: 'func' ;
 FOR: 'for';
 UNTIL: 'until';
 BY: 'by';
 BREAK: 'break';
-CONTINUE: 'continue';
+CONT: 'continue';
 IF: 'if';
 ELSE: 'else';
 ELIF: 'elif';
 BEGIN: 'begin';
 END: 'end';
-NOT: 'not';
-AND: 'and';
-OR: 'or';
+NOT: 'not';  // BOOLEAN_LIT OPERANDS
+AND: 'and';	// BOOLEAN_LIT OPERANDS
+OR: 'or';	// BOOLEAN_LIT OPERANDS
+LB: '(';
+RB: ')';
+LBRACE: '[';
+RBRACE:	']';
+COMMA:	',';
 
-// ARRAY: 'array'; AUTO: 'auto'; DO: 'do'; FLOAT: 'float'; INTEGER: 'integer'; VOID: 'void'; WHILE:
-// 'while'; OUT: 'out'; OF: 'of'; INHERIT: 'inherit';
+// operator
+ADD: '+';	// NUMBER_LIT OPERANDS
+MINUS: '-';	// NUMBER_LIT OPERANDS
+MUL: '*';	// NUMBER_LIT OPERANDS
+DIV: '/';	// NUMBER_LIT OPERANDS
+MOD: '%';	// NUMBER_LIT OPERANDS
+EQUAL_NUM: '=';	// equa // NUMBER_LIT OPERANDS
+EQUAL_STR: '==';	//equa	// STR_LIT OPERANDS
+ASS: '<-';	// assignment 
+DIF: '!=';	// different // NUMBER_LIT OPERANDS
+SM: '<';	// smaller	// NUMBER_LIT OPERANDS
+SMOE: '<='; // smaller or equal	// NUMBER_LIT OPERANDS
+BG: '>';	//	bigger	// NUMBER_LIT OPERANDS
+BGOE: '>='; // bigger or equal	// NUMBER_LIT OPERANDS
+CON: '...'; //concat two string // STR_LIT OPERANDS
 
-// COMMENT: '/*' .*? '*/' -> skip;
-LINE_COMMENT: '##' ~[\r\n]* -> skip; //
+// LITERALS
+NUMBER_LIT: INTEGER| INTEGER ('.' DECIMAL?) EXP| INTEGER ('.' DECIMAL?) | INTEGER EXP;
 
-ID: [_a-zA-Z] ([a-zA-Z0-9_])*;
+BOOL_LIT: TRUE|FALSE;
+STR_LIT: '"' (~["\f\n\r\\]| ESC  |'\'"' )* '"' {self.text = self.text[1:-1]};   // NHO SUA LAI STRING
 
-newline_list: NEW_LINE newline_list |;
-NEW_LINE: '\r'? '\n' {self.text = '\n'};
+// STR_LIT: '"' (~('"'|'//') | ESC | '\'"')* '"';
 
-WS: [ \t\f\b]+ -> skip;
+IDENTIFIER: ('_'|LETTER) (LETTER|DIGIT|'_')*;
 
-UNCLOSE_STRING:
-	'"' (~[\\\n"'] | ESC)* (EOF | [\r\n]) {
-	raise UncloseString(self.text[1:].replace('\n', '').replace('\r', ''))
+
+
+UNCLOSE_STRING: '"' (~('"'|'\f'|'\r'|'\n'|'\\')  | '\'"'|ESC)* ('\f'|'\r'|'\n'|EOF) {
+	decrease = ['\f','\r','\n']
+	if (self.text[-1] in decrease): 
+		raise UncloseString(self.text[1:-1])
+	else:
+		raise UncloseString(self.text[1:])
 };
-ILLEGAL_ESCAPE:
-	'"' (~[\\\n"] | ESC)* ILLEGAL_ESC {
-	raise IllegalEscape(self.text[1:])
-};
-ERROR_CHAR:
-	. {
-		raise ErrorToken(self.text)
-};
+ILLEGAL_ESCAPE: '"' (~('"'|'\f'|'\r'|'\n'|'\\')  | '\'"'|ESC)* ILLEGAL_ESC {
+	raise IllegalEscape(self.text[1:])};
+
+ERROR_CHAR: . {
+	raise ErrorToken(self.text)};

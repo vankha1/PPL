@@ -1,6 +1,8 @@
 
-func main()
-begin
-    if (1) writeBool(true)
-    else writeBool(false)
-end
+        dynamic x
+        func main() 
+        begin
+            var y <- x[0, 0] + 1
+            writeNumber(y)
+        end
+            

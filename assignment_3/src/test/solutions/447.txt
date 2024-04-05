@@ -1,1 +1,1 @@
-Type Mismatch In Statement: CallStmt(Id(f), [NumLit(2018.0)])
+Type Mismatch In Statement: AssignStmt(Id(a), ArrayLit(Id(i1), Id(f2)))

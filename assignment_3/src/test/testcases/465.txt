@@ -1,9 +1,11 @@
 
-func f(number x[2, 3])
-    return x[0]
-
-func main()
-begin
-    dynamic x <- f([[1, 2, 3], [4, 5, 6]])[2, 3]
-    writeNumber(x)
-end
+        func main()
+        begin
+            number i <- 0
+            for i until i < 10 by i
+            begin
+                continue
+                break
+            end
+        end
+            

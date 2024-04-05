@@ -1,13 +1,9 @@
 
-func foo(number a)
-
-func main()
-begin
-    number a <- foo(1)
-    return
-end
-
-func foo(number a)
-begin
-    return
-end
+        func main()
+        begin
+            bool b
+            dynamic c
+            number a[2, 3]
+            a <- [[c, c, c], [c, c, c]]
+        end
+            
