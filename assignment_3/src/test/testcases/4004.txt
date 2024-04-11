@@ -1,14 +1,15 @@
 
-            func foo(number x)
-            begin
-                return x
-            end
-        
+            dynamic y
             func main()
             begin
-                dynamic x <-2 
-                dynamic a
-                var y <- 2
-                x <- y + foo(a)
+                var x <- 2
+                if (true) 
+                begin
+                    var a <- y
+                    if (true)
+                    begin
+                        x <- y
+                    end
+                end
             end
             

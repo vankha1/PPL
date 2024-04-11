@@ -1,0 +1,6 @@
+
+        bool x <- true
+        func foo() begin
+            return x
+        end
+        

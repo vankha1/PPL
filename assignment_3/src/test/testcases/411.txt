@@ -1,6 +1,6 @@
-func main() begin
-            end
-            number c
-            func c() begin
-            end
-            
+
+    dynamic a
+    dynamic b
+    dynamic c
+    number arr[1, 2,2] <- [[a, b]]
+    ## number c[2, 2] <- arr

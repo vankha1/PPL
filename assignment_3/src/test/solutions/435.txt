@@ -1,1 +1,1 @@
-Type Cannot Be Inferred: VarDecl(Id(c), StringType, None, NumLit(2.3))
+Redeclared Function: hehe1

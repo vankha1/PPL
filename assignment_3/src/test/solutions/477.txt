@@ -1,1 +1,1 @@
-Type Mismatch In Statement: AssignStmt(Id(y), ArrayLit(BooleanLit(True), BooleanLit(False), BooleanLit(True)))
+Type Mismatch In Expression: BinaryOp(+, NumLit(2.0), BooleanLit(True))

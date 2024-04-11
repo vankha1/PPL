@@ -1,6 +1,6 @@
-
+dynamic a
+func foo() return a
 func main()
 begin
-    number x <- 2 + true
-    writeNumber(x)
+      number num <- foo()
 end

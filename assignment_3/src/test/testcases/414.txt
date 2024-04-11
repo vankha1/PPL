@@ -1,8 +1,7 @@
-func main()
-            begin
-            end
-            func foo (number a)
-            begin
-                bool a
-            end
-            
+
+        func b()
+        dynamic b
+        number a[2,3]<- [[b(),b,b],[b,b,b()]]
+        func b()
+        return true
+        

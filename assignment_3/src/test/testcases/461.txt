@@ -3,9 +3,11 @@
         begin
             return 0.0
         end
+        
         func bar()
         begin
         end
+        
         func main()
         begin
             number i

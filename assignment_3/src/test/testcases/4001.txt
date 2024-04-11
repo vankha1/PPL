@@ -1,0 +1,16 @@
+
+        func main() 
+        begin
+            dynamic x
+            dynamic y
+            dynamic z
+            number a[3, 3] <- [x, y, [1, 2, 3]]
+            x <- [1, 2, 3]
+            y <- [4, 5, 6]
+            z <- [7, 8, 9]
+            writeNumber(x[0] + z[0] + y[1])
+            dynamic t
+            number b[1,3,4] <- [t]
+            t <- [[1,2,3,4], [2,3,4,5], [3,4,5,6]]
+        end
+        

@@ -1,10 +1,8 @@
 
-func main()
-
-func main()
-
-func main()
-begin
-    if (1) writeBool(true)
-    else writeBool(false)
-end
+            func main()
+            begin
+                dynamic c
+                dynamic d
+                d <- c
+            end
+            

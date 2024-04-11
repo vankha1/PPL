@@ -1,16 +1,6 @@
 
-            func f()
-        begin
-            var i <- 0
-            for i until i > 10 by i
+            func main()
             begin
-            
+                number x[3] <- [2,3,"4"]
             end
-            continue
-        end
-        func main()
-        begin
-            number x <- 2 + true
-            writeNumber(x)
-        end
             

@@ -1,18 +1,17 @@
 
-func add(number x, number y)
-
-func main()
-begin
-    var i <- 0
-    for i until i > 10 by 0
-    begin
-        i <- add(i, 1)
-        writeNumber(i)
-    end
-end
-
-func add(number a, number b)
-begin
-    number x <- a + b
-    return x
-end
+        func hehe(number a, number b)
+        func main()
+        begin
+            number a[2,3]
+            a[hehe(1,2),hehe(1,2)]<-hehe(1,2)
+            a[hehe(1,2)]<-[hehe(1,2),hehe(1,2),hehe(1,2)]
+            
+        end
+        func hehe1(number a, number b)
+        func hehe(number hehe1,number hehe)
+        begin
+            hehe<-hehe1(hehe,hehe)
+            hehe1<-hehe1(hehe1,hehe1(hehe1,hehe1))+hehe(hehe1,hehe1(hehe1,hehe))
+        
+        end
+        

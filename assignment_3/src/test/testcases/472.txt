@@ -1,11 +1,7 @@
 
-number a
-bool b
-string c
-dynamic d
-func main()
-begin
-    if (b) d <- 1 + a
-    else d <- a - 1.75
-    c <- "Hello, world!"
-end
+        func main()
+        begin
+            dynamic x 
+            x  <- (x - 2) * (x + true)
+        end
+        
