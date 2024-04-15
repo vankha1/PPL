@@ -1,10 +1,9 @@
 
-        func main()
-        begin
-            bool b
-            number i
-            for i until i+1 by i<10
-            begin 
+            func foo() begin
+                dynamic a 
+                dynamic b <- 2
+                dynamic c
+                for a until b by c return
             end
-        end
-            
+            func main() return
+        

@@ -1,6 +1,6 @@
 
-        func main()
-        begin
-        number a <- [a,a,a,a,a]
-        end
+            number foo
+            func foo() return
+            
+            func main() return
         

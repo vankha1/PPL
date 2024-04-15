@@ -1,7 +1,8 @@
-func main() begin 
-        end
-            func c() begin 
-            end
-            func c() begin 
-            end
-            
+
+dynamic x <- f(2)
+func f(number x)
+
+func main()
+begin
+
+end

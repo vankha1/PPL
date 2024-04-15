@@ -5,10 +5,11 @@
             number a[2,3]
             a[hehe(),hehe()]<-hehe()
             a[hehe()]<-[hehe(),hehe(),hehe()]
+            
         end
         func hehe()
         begin
-            begin 
+            begin
             end
         end
         

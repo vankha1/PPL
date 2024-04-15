@@ -1,14 +1,7 @@
 
-            func foo(number x)
-            begin
-                return x
+            func main() begin
+                number a[1,2]
+                dynamic b
+                var c <- a["1"]
             end
         
-            func main()
-            begin
-                dynamic x <-2 
-                dynamic a
-                var y <- 2
-                x <- y + foo(a)
-            end
-            

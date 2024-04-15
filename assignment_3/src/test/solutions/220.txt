@@ -1,0 +1,1 @@
+Type Mismatch In Statement: VarDecl(Id(b), BoolType, None, CallExpr(Id(foo), [NumLit(2.0)]))

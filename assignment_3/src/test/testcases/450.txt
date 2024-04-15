@@ -1,10 +1,7 @@
 
-        func main()
-        begin
-            bool b
-            number i
-            if(b) 
-            begin
+            func foo(number a) return
+
+            func main()begin
+                foo("1")
             end
-        end
-            
+        

@@ -1,0 +1,9 @@
+
+           func f()
+           func main()
+           begin
+                number a <- f()
+           end
+           func f()
+           return "2"
+        

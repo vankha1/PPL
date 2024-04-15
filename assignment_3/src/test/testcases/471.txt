@@ -1,8 +1,7 @@
 
-            func main()
-            begin
-                dynamic c
-                dynamic d
-                d <- c
+            func main() begin
+                number a[1,2]
+                dynamic b
+                var c <- b[1]
             end
-            
+        

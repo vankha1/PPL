@@ -1,12 +1,12 @@
-func main()
-        begin
-            bool b
-            number i
-            if (b)
+
+            func main()
             begin
+            number a
+            if (a > 5)
+                begin
+                    begin
+                    break
+                    end
+                end
             end
-            elif (i)
-            begin 
-            end
-        end
         

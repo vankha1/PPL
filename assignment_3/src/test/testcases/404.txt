@@ -1,4 +1,3 @@
 
-        dynamic t
-        var a <- [[1,2],[1,t],[1,2,3]]
+            func main() return 1   
         

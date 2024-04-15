@@ -1,13 +1,10 @@
 
-        func main()
-        begin
-            number i <- 0
-            for i until i < 10 by i
-            begin
-                continue
-                begin
-                    break
-                end
+            func main() begin
+                dynamic left
+                dynamic right
+                
+                var c <- 1 + right
+                left <- 1
+                right <- 1
             end
-        end
-            
+        

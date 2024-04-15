@@ -69,6 +69,7 @@ class StaticChecker(BaseVisitor, Utils):
         self.ast = ast
         self.func_no_body = []
         self.arraylit_ast = []
+        self.return_type = None
         self.has_return = False
         self.return_list = []
     
@@ -558,6 +559,7 @@ class StaticChecker(BaseVisitor, Utils):
                     if right_type is None:
                         self.return_list += [ast]
                     else:
+                        self.return_type = right_type
                         o[i][0].type = right_type
                         
                         if self.return_list != []:
@@ -605,7 +607,7 @@ class StaticChecker(BaseVisitor, Utils):
                                 if type(right_type.eleType) is not type(o[i][0].type.eleType) or o[i][0].type.size != right_type.size:
                                     raise TypeMismatchInStatement(ast)
                                 
-                            o[i][0].type = right_type
+                            self.return_type = right_type
                 break
             
         self.arraylit_ast = []
@@ -728,17 +730,17 @@ class StaticChecker(BaseVisitor, Utils):
                 # 
             
             ## Chưa được suy diễn
-            if not check_return_stmt and o1[1][0].type is None: # there are no return statements, func type is VoidType
-                o1[1][0].type = VoidType()
+            if not check_return_stmt and self.return_type is None: # there are no return statements, func type is VoidType
+                self.return_type = VoidType()
             
-            ## Đã được suy diễn kiểu, giờ kiểm tra kiểu đó với kiểu thực của hàm với trường hợp không có câu lệnh return trong block    
-            # if not check_return_stmt and o1[1][0].type is not None:
-            #     # Đã được suy diễn nhưng giờ mới chạy hàm thật sự -> Cần kiểm tra kiểu đã suy diễn với kiểu thật
-                
-            #     # Đã chạy hàm thực sự
-            #     raise TypeMismatchInStatement(ast)
-            # if not check_return_stmt and o1[1][0].type is not None and type(o1[1][0].type) is not VoidType:
-            #     raise TypeMismatchInStatement(ast)
+            ## Đã được suy diễn kiểu, giờ kiểm tra kiểu đó với kiểu thực của hàm với trường hợp không có câu lệnh return trong block
+            if not check_return_stmt and self.return_type is not None:
+                if o1[1][0].type is None:
+                    o1[1][0].type = self.return_type
+                # Đã được suy diễn nhưng giờ mới chạy hàm thật sự -> Cần kiểm tra kiểu đã suy diễn với kiểu thật
+                if type(self.return_type) is not type(o1[1][0].type):
+                    raise TypeMismatchInStatement(ast)
+                # Đã chạy hàm thực sự
         
         self.has_return = False   
         self.arraylit_ast = []   
@@ -936,6 +938,7 @@ class StaticChecker(BaseVisitor, Utils):
             #                 raise Redeclared(Function(), ast.name.name)
             #             flag = True
         o[0] += [Symbol(ast.name.name, o1[0][0].type, None, list_params, check_having_body)]
+        self.return_type = None
         self.has_return = False
         self.return_list = []
         

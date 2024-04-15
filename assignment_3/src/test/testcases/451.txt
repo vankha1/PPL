@@ -1,13 +1,9 @@
 
-        func main()
-        begin
-            bool b
-            number i
-            if (b)
-            begin
+            func foo(number a) return
+
+            func main()begin
+                dynamic a
+                foo(a)
+                number c <- a
             end
-            elif (i)
-            begin 
-            end
-        end
-            
+        
