@@ -1,9 +1,6 @@
-
-            number a
-            func VoTien(number a, number VoTien, number c)
-            begin
-                string c
-            end
+func main()
+        begin
+            a <- 2
+            return
+        end
             
-            func main() return
-        

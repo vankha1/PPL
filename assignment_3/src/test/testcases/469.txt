@@ -1,6 +1,13 @@
 
-dynamic a
-func main()
-begin
-    var i <- a[2] ... 2.75
-end
+        func main()
+        begin
+            number i <- 0
+            for i until i < 10 by i + 1
+            begin
+                continue
+            end
+            begin
+                break
+            end
+        end
+            

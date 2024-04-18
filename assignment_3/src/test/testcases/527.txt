@@ -1,14 +1,15 @@
 
-func add(number x, number y)
-
-func main()
-begin
-    number x <- readNumber()
-    number y <- readNumber()
-    writeNumber(pow(x, y))
-end
-
-func add(number a, number b)
-begin
-    return a + b
-end
+        func hello(number a)
+        begin
+        end
+        
+        func main()
+        begin
+            dynamic a 
+            dynamic b <- [[1,2,3], a]
+            ## a is type number[3]
+            number c <- a[0]
+            number d <- a
+        end
+        
+        

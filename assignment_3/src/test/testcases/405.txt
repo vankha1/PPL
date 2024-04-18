@@ -1,3 +1,6 @@
-
-            number VoTien
-        
+func main()
+            begin
+                number a
+                string a
+            end
+            

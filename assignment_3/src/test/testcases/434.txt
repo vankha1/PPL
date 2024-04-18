@@ -1,5 +1,6 @@
 
-            func main() begin
-                continue
-            end
+        func hehe()
+        func hehe(number a)
+        func main()
+        return 0
         

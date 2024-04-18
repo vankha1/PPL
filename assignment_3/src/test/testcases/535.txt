@@ -1,11 +1,6 @@
-
-func main()
-begin
-    dynamic a
-    dynamic b
-    dynamic c
-    dynamic x <- [readNumber(), a, b, c]
-    a <- 3
-    b <- x[0]
-    c <- a + b
-end
+func foo(number a, number b)
+        func foo(number b) return 0
+        func main() begin
+        
+        end
+        

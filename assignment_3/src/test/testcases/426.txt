@@ -1,7 +1,6 @@
-
-            number a <- a
-            func main() begin
-                number b <- a
-                number c <- e
-            end
-        
+func main()
+        begin
+            number a
+            a <- foo() + 5
+        end
+            

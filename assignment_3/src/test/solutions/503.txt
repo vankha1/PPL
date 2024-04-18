@@ -1,1 +1,1 @@
-Type Mismatch In Statement: CallStmt(Id(writeBool), [Id(y)])
+Undeclared Identifier: a

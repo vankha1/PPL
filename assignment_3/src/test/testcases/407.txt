@@ -1,5 +1,7 @@
-
-            func foo(number a) return   
-        
-            func main() return
-        
+ number a
+            func main()
+            begin
+                string a
+                return
+            end
+            

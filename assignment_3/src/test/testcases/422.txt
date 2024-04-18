@@ -1,12 +1,6 @@
-
-            number a
-            func VoTien(number a, number VoTien, number c)
-            begin
-                begin
-                    number a
-                end
-                number a
-            end
+func main()
+        begin
+            var a <- 2
+            var b <- a + 2
+        end
             
-            func main() return
-        

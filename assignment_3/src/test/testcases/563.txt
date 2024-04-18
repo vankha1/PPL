@@ -1,7 +1,8 @@
-
-number x <- 10
-func f(number x)
+func foo(number x, string y)
+func foo(number x, number x) 
 begin
-    number x <- x + 20
-    writeNumber(x)
+
+end
+func main() begin
+
 end

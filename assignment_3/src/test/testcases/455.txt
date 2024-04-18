@@ -1,12 +1,10 @@
 
-            func foo() begin
-                dynamic a
-                dynamic b
-                dynamic c
-                for a until b by c return
-                a <- 1
-                b <- true
-                c <- 1
+        func main()
+        begin
+            bool b <- true
+            number i
+            for b until i<10 by i*2
+            begin
             end
-            func main() return
-        
+        end
+            

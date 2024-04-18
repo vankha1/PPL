@@ -1,13 +1,7 @@
-
-func foo(number a)
-
-func main()
-begin
-    number a <- foo(1)
-    return
-end
-
-func foo(number a)
-begin
-    return
-end
+func main() begin
+            var i <- 1
+            for i until i > 3 by 1
+                var x <- 1
+            var y <- x
+        end
+        

@@ -1,12 +1,10 @@
-
-            number a
-            func VoTien() return
-            func main()begin
-                number a
-                begin
-                    number a
-                    string a
-                end
-                
+func main()
+            begin
             end
-        
+            func foo (number a)
+            begin
+            end
+            func a (number foo)
+            begin
+            end
+            

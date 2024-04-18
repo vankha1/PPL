@@ -1,9 +1,9 @@
 
-func main()
-begin
-    dynamic a
-    dynamic b
-    dynamic c
-    dynamic x
-    x <- [a, b, [c]]
-end
+        func foo()
+        begin
+        end
+        func main()
+        begin
+            a[0] <- 5
+        end
+            

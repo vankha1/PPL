@@ -1,1 +1,1 @@
-Type Mismatch In Statement: For(Id(a), Id(b), Id(c), Return())
+Type Mismatch In Statement: For(Id(i), BinaryOp(<, Id(i), NumLit(10.0)), BinaryOp(<, Id(i), NumLit(10.0)), Block([]))

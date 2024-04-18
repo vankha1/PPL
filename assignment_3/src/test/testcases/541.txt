@@ -1,4 +1,4 @@
-
-number a <- 1 + "Hello"
-func main()
-    return
+func foo(number a,number b) begin
+    number a
+end
+func main() return

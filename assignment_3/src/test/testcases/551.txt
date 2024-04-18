@@ -1,12 +1,4 @@
-
-func add(number x, number y)
-
-func main()
-begin
-    number x <- readNumber()
-    number y <- readNumber()
-    dynamic a <- add(x, y) + 1
+func foo(number a,number b) begin
+number a
 end
-
-func add(number x, number y)
-    return "Hello"
+func main() return

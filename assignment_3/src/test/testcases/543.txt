@@ -1,7 +1,12 @@
+func foo(number a, number b)
+func foo1()
+begin
+	return 1 + foo(1, 2)
+end
+func main() begin
 
-number x
-number y
-func f()
-
-func main()
-    return
+end
+func foo(number a, number b)
+begin
+	return 0
+end

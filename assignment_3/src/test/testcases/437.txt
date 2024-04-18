@@ -1,7 +1,9 @@
 
-            dynamic VoTien
-            number a <- VoTien
-            number b <- VoTien
-
-            func main() return
+        func test()
+        return true
+        func main()
+        begin
+            string t[2,3]
+            dynamic a <- t[test(),test()]
+        end
         

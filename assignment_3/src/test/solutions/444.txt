@@ -1,1 +1,1 @@
-Type Mismatch In Statement: VarDecl(Id(a), NumberType, None, StringLit(1))
+Type Mismatch In Expression: CallExpr(Id(foo), [Id(a), Id(b)])

@@ -1,9 +1,8 @@
 
-func f(number x)
-
-dynamic x <- f(2) + 1
-
-func main()
-begin
-    return
-end
+        func foo()
+        func main()
+        begin
+        end
+        number a <- foo(1, 2)
+        func foo() return 1
+            

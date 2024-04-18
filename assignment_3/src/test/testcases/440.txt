@@ -1,9 +1,14 @@
 
-            func foo() begin
-                number a
-                return a
-                return 1
-            end
+        func happy()
+        number a <- happy()
+        func happy()
+        return 1
+        
 
-            func main() return
+        func main()
+        begin
+            string a <- "Tu nay duyen kiep bo lai phia sau, troi nhu muon khoc ngay minh mat nhau"
+            a <- happy()
+            
+        end
         

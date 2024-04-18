@@ -1,6 +1,12 @@
 
-            dynamic VoTien
-            var a <- VoTien
-
-            func main() return
+        func hehe(number a)
+        func hehe1(number a)
+        return true
+        
+        func main()
+        return 3
+        func hehe(number t)
+        return t
+        func hehe1(number t)
+        return t
         

@@ -1,1 +1,1 @@
-Type Mismatch In Statement: For(Id(a), Id(b), Id(c), Return())
+Type Cannot Be Inferred: AssignStmt(Id(v), Id(v))

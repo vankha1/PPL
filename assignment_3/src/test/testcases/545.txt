@@ -1,9 +1,6 @@
 
-func f()
-begin
-
+        func foo() begin
+     dynamic d
+     return d
 end
-dynamic a
-number b
-bool c
-string d
+func main() return

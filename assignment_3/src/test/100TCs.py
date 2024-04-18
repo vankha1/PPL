@@ -4787,7 +4787,7 @@ dynamic a
             return 0
         
         """
-        expect="Redeclared Variable: a"
+        expect="No Entry Point"
         self.assertTrue(TestChecker.test(input,expect,432))
     def test033(self):
         input="""
@@ -4847,7 +4847,7 @@ dynamic a
 
         """
         expect="No Function Definition: test1"
-        self.assertTrue(TestChecker.test(input,expect,436))
+        self.assertTrue(TestChecker.test(input,expect,436)) 
     def test037(self):
         input="""
         func test()

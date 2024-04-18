@@ -1,14 +1,14 @@
 
-func add(number x, number x)
-
-func main()
-begin
-    number x <- readNumber()
-    number y <- readNumber()
-    writeNumber(add(x, y))
-end
-
-func add(number a, number b)
-begin
-    return a + b
-end
+        func hello(number a)
+        begin
+        end
+        
+        func main()
+        begin
+            dynamic b
+            hello(b)
+            ## b is Number, because the parameter of hello() is number
+            number c <- b + 1
+        end
+        
+        

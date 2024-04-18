@@ -1,5 +1,7 @@
 
-            number a[1,2] <- [[1,2]]
-
-            func main() return
-        
+        func main()
+        begin
+            number a[5]
+            a <- [1,"2.0"]
+        end
+            

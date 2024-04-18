@@ -1,3 +1,4 @@
-
-            func main() return
+func b() 
+            begin
+            end
         

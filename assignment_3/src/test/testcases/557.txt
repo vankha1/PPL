@@ -1,7 +1,3 @@
-
-func main()
-begin
-    dynamic x <- "Hello"
-    if (x == "Hello") writeString(x)
-    else writeString("Something weird!")
-end
+dynamic a
+dynamic x <- a == (a+2)
+func main() return

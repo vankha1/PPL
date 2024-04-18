@@ -1,10 +1,13 @@
-
-func f(number x)
-begin
-    return 1
-end
-
-func main()
-begin
-    f(2018)
-end
+string b <- "Hello"
+            var a <- 2.3
+            func foo(number a) begin
+                return a + 1 - -a
+            end
+            func main ()
+            begin
+                number x <- 2
+                var y <- "Bobo"
+                var z <- 3.4
+                writeNumber(foo(x))
+            end
+            

@@ -1,7 +1,2 @@
-
-func f()
-
-number f
-dynamic x
 func main()
-    return
+        

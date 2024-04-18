@@ -43,7 +43,7 @@ class Utils:
                     if Utils.isFunc(symbol) is False and symbol.name == expr.name:
                         if symbol.type is None:
                             symbol.type = typ
-                        elif symbol.type is not typ:
+                        elif type(symbol.type) is not type(typ):
                             return False
                         return typ
         
@@ -53,7 +53,7 @@ class Utils:
                     if Utils.isFunc(symbol) and symbol.name == expr.name.name:
                         if symbol.type is None:
                             symbol.type = typ
-                        elif symbol.type is not typ:
+                        elif type(symbol.type) is not type(typ):
                             return False
                         return typ
              
@@ -64,9 +64,20 @@ class Utils:
             if len(expr.value) != typ.size[0]:
                 return False
             for val in expr.value:
-                expr_type = Utils.resolveType(val, typ.eleType if len(typ.size) == 1 else ArrayType(typ.size[1:], typ.eleType), param)
-                if expr_type is False:
-                    return False
+                if len(typ.size) == 1:
+                    # if len(expr.value) != typ.size[0]:
+                    #     raise Exception("Array literal")
+                    expr_type = Utils.resolveType(val, typ.eleType, param)
+                    if expr_type is False:
+                        return False
+                else:
+                    try:
+                        expr_type = Utils.resolveType(val, ArrayType(typ.size[1:], typ.eleType), param)
+                        if expr_type is False:
+                            return False
+                    except Exception as ex:
+                        if (str(ex) == "Array literal"):
+                            raise TypeMismatchInExpression(expr)
             return typ  
     
     def isFunc(symbol):
@@ -83,10 +94,21 @@ class StaticChecker(BaseVisitor, Utils):
         self.return_list = []
         self.in_loop = []
         self.is_called = False
-        
+        self.levels = {}
     def check(self):
         return self.visit(self.ast, None)
     
+    def check_error_arr_list(self, ast, level=1):
+        for val in ast.value:
+            if isinstance(val, ArrayLiteral):
+                self.check_error_arr_list(val, level + 1)
+            else:
+                tmp = val.name if type(val) is Id else val.name.name + "CE"
+                if tmp not in self.levels:
+                    self.levels[tmp] = []
+                if level not in self.levels[tmp]:
+                    self.levels[tmp].append(level)
+
     def visitId(self, ast, o):
         print("This is from visitId", ast.name)
         for symbol_list in o:
@@ -483,7 +505,7 @@ class StaticChecker(BaseVisitor, Utils):
             # elif type(ast.lhs) is CallExpr:
             #     lhs_type = Utils.infer(o, ast.lhs.name.name, exp_type)
             
-            if type(ast.lhs) in [Id, CallExpr]:
+            if type(ast.lhs) in [Id, CallExpr, ArrayLiteral]:
                 lhs_type = Utils.resolveType(ast.lhs, exp_type, o)
             else:
                 if type(ast.lhs) is ArrayCell:
@@ -496,8 +518,16 @@ class StaticChecker(BaseVisitor, Utils):
             # elif type(ast.rhs) is CallExpr:
             #     exp_type = Utils.infer(o, ast.rhs.name.name, lhs_type)
             
-            if type(ast.rhs) in [Id, CallExpr]:
+            if type(ast.rhs) in [Id, CallExpr, ArrayLiteral]:
+                if type(ast.rhs) is ArrayLiteral:
+                    self.check_error_arr_list(ast.rhs)
+                    for item, lvl in self.levels.items():
+                        if len(lvl) > 1:
+                            raise TypeMismatchInExpression(ast.rhs)
+                        
                 exp_type = Utils.resolveType(ast.rhs, lhs_type, o)
+                if exp_type is False:
+                    raise TypeCannotBeInferred(ast)
             else:
                 return None
         
@@ -515,7 +545,6 @@ class StaticChecker(BaseVisitor, Utils):
                 if exp_type.eleType is None:
                     if type(ast.rhs) in [Id, CallExpr, ArrayLiteral]:
                         exp_ele_type = Utils.resolveType(ast.rhs, lhs_type, o)
-                        print(exp_ele_type)
                         exp_type.eleType = lhs_type.eleType
                     else:
                         TypeCannotBeInferred(ast)
@@ -526,8 +555,8 @@ class StaticChecker(BaseVisitor, Utils):
         if type(lhs_type) is type(exp_type):
             return exp_type
         
-        # self.arraylit_ast = []
-        
+        self.levels = {}
+                
     def visitIf(self, ast, o): # expr: Expr, thenStmt: Stmt, elifStmt: List[Tuple[Expr, Stmt]], elseStmt: Stmt = None
         condition_type = self.visit(ast.expr, o)
         if type(condition_type) is CannotBeInfer or (condition_type is None and type(ast.expr) is ArrayLiteral) :
@@ -893,6 +922,12 @@ class StaticChecker(BaseVisitor, Utils):
                 o[0][-1] = Symbol(ast.name.name, init, ast.modifier, None)
                 
             elif o[0][-1].type is None and init is None:
+                if type(ast.varInit) is ArrayLiteral:
+                    self.check_error_arr_list(ast.varInit)
+                    for item, lvl in self.levels.items():
+                        if len(lvl) > 1:
+                            raise TypeMismatchInExpression(ast.varInit)
+                        
                 raise TypeCannotBeInferred(ast)
             
             elif type(ast.varType) is ArrayType and type(init) is ArrayType:
@@ -921,9 +956,19 @@ class StaticChecker(BaseVisitor, Utils):
                 
             elif ast.varType is not None and init is None: 
                 
+                if type(ast.varInit) is ArrayLiteral:
+                    if type(ast.varType) is ArrayType:
+                        if len(ast.varInit.value) != ast.varType.size[0]:
+                            raise TypeCannotBeInferred(ast)
+                
                 if type(ast.varInit) in [ArrayLiteral, Id, CallExpr]:
+                    if type(ast.varInit) is ArrayLiteral:
+                        self.check_error_arr_list(ast.varInit)
+                        for item, lvl in self.levels.items():
+                            if len(lvl) > 1:
+                                raise TypeMismatchInExpression(ast.varInit)
+                            
                     res = Utils.resolveType(ast.varInit, ast.varType, o)
-
                     if res is False :
                         raise TypeCannotBeInferred(ast)
                 o[0][-1] = Symbol(ast.name.name, ast.varType, ast.modifier, None)
@@ -935,6 +980,7 @@ class StaticChecker(BaseVisitor, Utils):
                 o[0][-1] = Symbol(ast.name.name, o[0][-1].type, ast.modifier, None)
                 
         # self.arraylit_ast = []
+        self.levels = {}
             
     def visitFuncDecl(self, ast, o): # name: Id # param: List[VarDecl]  # body: Stmt = None  
         print("This is from visitFuncDecl")

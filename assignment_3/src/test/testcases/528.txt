@@ -1,18 +1,7 @@
-
-func add(number x, number y)
-
-func main()
-begin
-    var i <- 0
-    for i until i > 10 by 0
-    begin
-        i <- add(i, 1)
-        writeNumber(i)
-    end
-end
-
-func add(number a, number b)
-begin
-    number x <- a + b
-    return x
-end
+func main() begin
+        dynamic a
+        dynamic b
+        number x[2,1] <- [[a], [1]]
+        number y[2,2] <- [[1, 2], b]
+        end
+        

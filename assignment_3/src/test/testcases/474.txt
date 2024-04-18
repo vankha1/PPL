@@ -1,7 +1,15 @@
 
-            func main() begin
-                number a[1,2]
-                dynamic b
-                var c <- a[1,2,3]
+            dynamic y
+            func main()
+            begin
+                var x <- 2
+                if (true) 
+                begin
+                    var a <- y
+                    if (true)
+                    begin
+                        x <- y
+                    end
+                end
             end
-        
+            

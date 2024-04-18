@@ -1,1 +1,1 @@
-Type Mismatch In Expression: BinaryOp(==, Id(y), NumLit(0.0))
+Undeclared Function: super

@@ -1,6 +1,7 @@
 
-            func a() return 1
-            func main() begin
-                number b <- a
+            func main()
+            begin
+                number arr <- 2
+                main()
             end
-        
+            

@@ -1,11 +1,10 @@
 
-            func main()begin
-                dynamic a
-                if (a) number a
-                elif (a)  return
-                else number a
-                
-                if(true) number a
-                elif (1) number a
+        func main()
+        begin
+            bool b
+            var i <- 0
+            for i until i<10 by i+1
+            begin
             end
-        
+        end
+            

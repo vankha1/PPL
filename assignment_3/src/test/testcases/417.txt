@@ -1,8 +1,7 @@
-
-            number a
-            func VoTien() return
-            func main()begin
-                number a
-                string a
+func main() 
+            begin
             end
-        
+            func foo (number foo) ## No error variable name can be same as func name
+            begin
+            end
+            

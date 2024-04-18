@@ -1,7 +1,6 @@
-
-func main()
-begin
-    dynamic x <- [1, 2, 3]
-    dynamic a <- x
-    writeNumber(a[0])
-end
+func foo( number a, number b[1,2])
+func foo( number a, number b[1,2])
+func main() return
+func foo( number a, number b[1,2])
+     return 1
+     

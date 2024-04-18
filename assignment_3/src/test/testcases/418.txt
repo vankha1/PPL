@@ -1,11 +1,7 @@
-
-            number a
-            func VoTien() return
-            func main()begin
-                number a
-                begin
-                    number a
-                end
-                string a
+func main() 
+            begin
             end
-        
+            func foo(number main)
+            begin
+            end
+            

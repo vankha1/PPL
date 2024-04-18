@@ -1,3 +1,5 @@
-
-            func main() return 1   
+func bkool()
+            begin
+                return true
+            end
         

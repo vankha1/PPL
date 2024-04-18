@@ -1,6 +1,8 @@
 
-            func foo() return
-            func foo()
-            
-            func main() return
+        func foo (number n, string n) begin
+        
+        end 
+        func main() begin
+        
+        end
         

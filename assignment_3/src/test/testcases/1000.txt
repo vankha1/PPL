@@ -1,7 +1,14 @@
 
+            func test()
+            begin
+                if (1 > 0) return true
+                else return 1
+            end
             func main()
             begin
-
+                dynamic b
+                dynamic c
+                number a[2,3]
+                a <- [[c,c,c], [b,b]]
             end
-
         

@@ -1,7 +1,8 @@
 
-            func a() return
-            func main() begin
-                number a
-                a()
-            end
-        
+        func main()
+        begin
+            number a[5]
+            number b
+            b <- a[5]
+        end
+            

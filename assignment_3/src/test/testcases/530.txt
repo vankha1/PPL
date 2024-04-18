@@ -1,16 +1,10 @@
-
-func main()
-begin
-    var i <- 0
-    for i until i < 0 by 1
-    begin
-        string x <- readString()
-        if (x == "Hello") 
-        begin
-            x <- x ... ", world!"
-            writeString(x)
+func foo() begin
+            dynamic a
+            bool b
+            if (2 = 5) return b
+            else return a
         end
-        else writeString("Try again")
-    end
-    break
-end
+        func main() begin
+        
+        end
+        

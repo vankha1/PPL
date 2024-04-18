@@ -1,12 +1,5 @@
-
-number x
-number y
-func add()
-    return x + y
-
+func foo(number a)
+func foo(string a, bool b) return a
 func main()
-begin
-    x <- readNumber()
-    y <- readNumber()
-    writeNumber(add())
+begin 
 end

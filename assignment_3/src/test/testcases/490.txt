@@ -1,9 +1,9 @@
 
-dynamic x
-func f(number x)
-    return x + 1
-
-func main()
-begin
-    x <- f(20, 30, 40) + 1
-end
+        func foo1() return 2
+        func foo2() return 3
+        func main()
+        begin
+            number a[2] <- [ foo1(), foo2()]
+            writeNumber(foo1())
+        end
+            

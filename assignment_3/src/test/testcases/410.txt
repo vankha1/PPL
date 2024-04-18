@@ -1,6 +1,16 @@
 
-            number a
-            string a 
+        func f()
+        begin
+            var j <- 1
+            for j until j > 11 by 1
+            begin
             
-            func main() return
+            end
+            break
+        end
+        
+        func main()
+        begin
+            f()
+        end
         

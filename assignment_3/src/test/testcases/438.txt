@@ -1,8 +1,8 @@
 
-            func foo() begin
-                dynamic a
-                return a
-            end
-
-            func main() return
+        func happy()
+        return 2
+        func happy()
+        return 1
+        func main()
+        return 0
         
