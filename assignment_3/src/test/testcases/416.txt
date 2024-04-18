@@ -1,10 +1,13 @@
 
-        func a()
-        number a
-        func main()
-        begin
-            number a[5] <- [a(),2,3,4,5]
-        end
-        func a()
-            return
-    
+            number a
+            func VoTien() return
+            func main()begin
+                number a
+                number c
+                string VoTien
+                begin
+                    number c
+                    string VoTien
+                end
+            end
+        

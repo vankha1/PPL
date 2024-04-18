@@ -1,15 +1,5 @@
 
-        func hehe1(number a, number b, number c[1,2,3])
-        begin
-            dynamic t
-            dynamic hehe1 <- [c,t]
-            return hehe1
-        end
-        
-        func main()
-        begin
-            dynamic a
-            hehe1(1,1,a)
-        end
-        
+            func main() begin
+                break
+            end
         

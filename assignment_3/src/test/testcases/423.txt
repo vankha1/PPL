@@ -1,17 +1,6 @@
 
-        func test()
-        func main()
-        begin
-            number a[2,3]<- test()
-        end
-        func test()
-        begin
-            begin
-                begin
-                    begin
-                        return 1
-                    end
-                end
-            end
-        end
+            func foo(number a) 
+            func foo(string a) return
+            
+            func main() return
         

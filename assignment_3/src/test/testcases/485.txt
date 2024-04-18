@@ -1,3 +1,10 @@
 
-        func inc(number a) return a+1
-            
+dynamic a
+func main()
+begin
+    dynamic b
+    dynamic c
+    dynamic d
+    dynamic e 
+    var x <- [a, [b], [[c]], [[[d, e]]]]
+end

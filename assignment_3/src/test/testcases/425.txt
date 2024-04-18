@@ -1,10 +1,6 @@
 
-        func test(number a, string b)
-        func main()
-            begin
-            dynamic a
-            dynamic b
-                a <-test(test(a,b),test(a,b))
-            end
-        
+            func foo(number a, string c) 
+            func foo(number a) return
+            
+            func main() return
         

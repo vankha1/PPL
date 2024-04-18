@@ -1,15 +1,14 @@
 
-        func hehe()
-        func hehe1()
-        func main()
-        begin
-            number a[2,3]
-            a[hehe(),hehe()]<-hehe()
-            a[hehe()]<-[hehe(),hehe(),hehe()]
-            
-        end
-        func hehe()
-        begin
-            return 1
-        end
-        
+func f(number x)
+
+func main()
+begin
+    number x <- 10
+    number y <- f(x)
+    writeNumber(y)
+end
+
+func f(string x)
+begin
+    return x == "Hello"
+end

@@ -1,8 +1,9 @@
 
-        func foo(number a, number b) return 1.2
-        func main()
-        begin
-            foo(1,2) ## error here because foo returns number type, not void
-            number a <- foo(1,2) + 1
-        end
-            
+dynamic a
+func main()
+begin
+    var x <- [a, [1, 2, 3]]
+    a <- [1, 9, 6]
+    x <- [[3, 9, 6], [1, 3, 2]]
+    writeNumber(x[0, 0])
+end

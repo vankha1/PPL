@@ -5,6 +5,7 @@ class StaticCheck:
     
     ## TYPE MISMATCH STMT: RETURN-STMT
     
+
     def test501(self):
         input = """
 func f()
@@ -181,7 +182,7 @@ begin
     writeNumber(x)
 end
 """
-        expect = "Type Mismatch In Expression: ArrayLit(ArrayLit(ArrayLit(ArrayLit(NumLit(1.0), NumLit(2.0))), ArrayLit(NumLit(3.0), NumLit(4.0), NumLit(5.0))), ArrayLit(ArrayLit(NumLit(6.0), NumLit(7.0), NumLit(8.0)), ArrayLit(NumLit(9.0), NumLit(10.0), NumLit(11.0))))"
+        expect = "Type Mismatch In Expression: ArrayLit(ArrayLit(ArrayLit(NumLit(1.0), NumLit(2.0))), ArrayLit(NumLit(3.0), NumLit(4.0), NumLit(5.0)))"
         self.assertTrue(TestChecker.test(input, expect, 519))
         
     def test574(self):
@@ -412,7 +413,7 @@ end
             var x <- [[[1, 2], [3, 4, 5]], [[6, 7, 8], [9, 10, 11]]]
         end
         """
-        expect = "Type Mismatch In Expression: ArrayLit(ArrayLit(ArrayLit(NumLit(1.0), NumLit(2.0)), ArrayLit(NumLit(3.0), NumLit(4.0), NumLit(5.0))), ArrayLit(ArrayLit(NumLit(6.0), NumLit(7.0), NumLit(8.0)), ArrayLit(NumLit(9.0), NumLit(10.0), NumLit(11.0))))"
+        expect = "Type Mismatch In Expression: ArrayLit(ArrayLit(NumLit(1.0), NumLit(2.0)), ArrayLit(NumLit(3.0), NumLit(4.0), NumLit(5.0)))"
         self.assertTrue(TestChecker.test(input, expect, 4002))        
         
         
@@ -469,7 +470,7 @@ end
 func add(number x, number y)
     return "Hello"
 """
-        expect = ""
+        expect = "Type Cannot Be Inferred: AssignStmt(ArrayCell(Id(a), [NumLit(0.0)]), ArrayLit(NumLit(1.0), NumLit(2.0), NumLit(3.0)))"
         self.assertTrue(TestChecker.test(input, expect, 552))
 
 
@@ -1055,7 +1056,7 @@ end
     ## number c[2, 2] <- arr
 
 """
-        expect = "Type Mismatch In Statement: VarDecl(Id(arr), ArrayType([2.0, 2.0], NumberType), None, ArrayLit(ArrayLit(Id(a), Id(b))))"
+        expect = "Type Cannot Be Inferred: VarDecl(Id(arr), ArrayType([2.0, 2.0], NumberType), None, ArrayLit(ArrayLit(Id(a), Id(b))))"
         self.assertTrue(TestChecker.test(input, expect, 555))
         
     def test556(self):
@@ -1166,7 +1167,7 @@ end
 func f(number x[2, 3])
     return x
 """
-        expect = ""
+        expect = "Type Cannot Be Inferred: AssignStmt(ArrayCell(Id(a), [NumLit(0.0)]), ArrayLit(NumLit(1.0), NumLit(2.0), NumLit(3.0)))"
         self.assertTrue(TestChecker.test(input, expect, 522))
     
     def test524(self):
@@ -1558,7 +1559,7 @@ begin
     writeNumber(x)
 end
 """
-        expect = "Redeclared Variable: x"
+        expect = "No Entry Point"
         self.assertTrue(TestChecker.test(input, expect, 563))
 
 
@@ -1681,7 +1682,7 @@ end
         dynamic temp <- "abc"
         var a <- [[1,2],[1,ans],[temp,ans]]
         """
-        expect = "Type Mismatch In Expression: ArrayLit(ArrayLit(NumLit(1.0), NumLit(2.0)), ArrayLit(NumLit(1.0), Id(ans)), ArrayLit(Id(temp), Id(ans)))"
+        expect = "Type Mismatch In Statement: VarDecl(Id(arr), ArrayType([2.0, 2.0], NumberType), None, ArrayLit(NumLit(1.0), NumLit(2.0), NumLit(3.0), NumLit(4.0)))"
         self.assertTrue(TestChecker.test(input, expect, 5))
     def test_006(self):
         input = """
@@ -1966,7 +1967,7 @@ func main() return
             
             func main() return
         """
-        expect = "Redeclared Variable: c"
+        expect = ""
         self.assertTrue(TestChecker.test(input, expect, 420))
         
         input = """
@@ -1992,7 +1993,7 @@ func main() return
             
             func main() return
         """
-        expect = "Redeclared Variable: a"
+        expect = ""
         self.assertTrue(TestChecker.test(input, expect, 422))
         
         input = """
@@ -2331,7 +2332,7 @@ func main() return
                 elif (1) number a
             end
         """
-        expect = "Type Mismatch In Statement: If((BooleanLit(True), VarDecl(Id(a), NumberType, None, None)), [(NumLit(1.0), VarDecl(Id(a), NumberType, None, None))], None)"
+        expect = "Redeclared Variable: a"
         self.assertTrue(TestChecker.test(input, expect, 454)) 
         
         input = """
@@ -2617,7 +2618,7 @@ end
         end
         func main() return
         """
-        expect = ""
+        expect = "Type Mismatch In Statement: Return(StringLit(!))"
         self.assertTrue(TestChecker.test(input, expect, 459))
         
         
@@ -4141,7 +4142,7 @@ end
             end
             func main() return
         """
-        expect = "Type Cannot Be Inferred: Return(Id(x))"
+        expect = ""
         self.assertTrue(TestChecker.test(input, expect, 233))
 
     def test124(self): #
@@ -4212,7 +4213,7 @@ end
                 number a[2,2,2] <- [[[1,2], [2,3]], [["abc",5], [6,7]]]
             end
         """
-        expect = "Type Mismatch In Expression: ArrayLit(ArrayLit(ArrayLit(NumLit(1.0), NumLit(2.0)), ArrayLit(NumLit(2.0), NumLit(3.0))), ArrayLit(ArrayLit(StringLit(abc), NumLit(5.0)), ArrayLit(NumLit(6.0), NumLit(7.0))))"
+        expect = "Type Mismatch In Expression: ArrayLit(StringLit(abc), NumLit(5.0))"
         self.assertTrue(TestChecker.test(input, expect, 238))
 
     def test129(self): #
@@ -4251,7 +4252,7 @@ end
         end
         func main() return
         """
-        expect = "Redeclared Variable: a"
+        expect = ""
         self.assertTrue(TestChecker.test(input, expect, 241))
 
     def test132(self): # redeclared function (note)

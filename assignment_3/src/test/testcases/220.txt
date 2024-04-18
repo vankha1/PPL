@@ -1,15 +1,5 @@
 
-            func foo(number i)
-            begin
-                if (i = 1) return 2
-                else
-                begin
-                    dynamic x
-                    return x
-                end
-            end
-            func main()
-            begin
-                bool b <- foo(2)
-            end
+            dynamic a
+            string x <- [a]
+            func main() return
         

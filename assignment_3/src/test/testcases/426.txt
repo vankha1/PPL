@@ -1,10 +1,7 @@
 
-        func hehe()
-        func main()
-        begin
-            number a[2,3]
-            a[hehe(),hehe()]<-hehe()
-            a[hehe()]<-[hehe(),hehe(),hehe()]
-            a[hehe()]<-[hehe(),hehe(),hehe(),hehe()]
-        end
+            number a <- a
+            func main() begin
+                number b <- a
+                number c <- e
+            end
         

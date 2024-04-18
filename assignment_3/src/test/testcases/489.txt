@@ -1,7 +1,10 @@
 
-        func foo(number x[2]) return
-        func main()
-        begin
-            foo(1)
-        end
-            
+func test(number x)
+
+func main()
+begin
+    number test
+    begin
+        number x <- test(2018) + 1
+    end
+end

@@ -1,13 +1,8 @@
 
-        func a1(number a,number b, number c)
-        func main()
-        begin
-            number a <- 1
-            a1(1,2,3)
-        end
-        func a(number a,number b, number c)
-        begin
-            a<-a1(a,b,c)
-            return "lo ve du"
-        end
+            number a
+            func VoTien(number a, number VoTien, number c, string c)
+            begin
+            end
+            
+            func main() return
         

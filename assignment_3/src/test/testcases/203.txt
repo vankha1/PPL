@@ -1,9 +1,13 @@
 
+            func check()
+            begin
+                dynamic a
+                return a
+            end
             func main()
             begin
-            number a
-            for a until a > 5 by 5
-            continue
-            break
+                dynamic a
+                dynamic b
+                number c[2,3]<-[[a,a,a],[b,b]]
             end
         

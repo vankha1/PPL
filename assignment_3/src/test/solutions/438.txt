@@ -1,1 +1,1 @@
-Redeclared Function: happy
+Type Cannot Be Inferred: Return(Id(a))

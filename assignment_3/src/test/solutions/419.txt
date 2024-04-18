@@ -1,1 +1,1 @@
-Type Mismatch In Statement: VarDecl(Id(c), None, var, ArrayLit(Id(c), Id(c), Id(c), Id(c), Id(d)))
+Redeclared Variable: a

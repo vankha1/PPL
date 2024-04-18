@@ -1,14 +1,22 @@
 
-       
-        func hehe1(number a, number b)
-        begin
-            number c[2,3]
-            begin 
-                number a <- 1
+            func main() begin
+                var i <- 2
+                for i until true by 1
+                begin
+                    break
+                    continue
+                    begin
+                        break
+                        continue
+                    end
+                    
+                    for i until true by 1
+                    begin
+                        break
+                        continue
+                    end
+                    break
+                    continue
+                end
             end
-            number a <- a
-        end
-        func main()
-            return 0
-        
         

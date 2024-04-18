@@ -1,9 +1,9 @@
 
-        dynamic a
-        dynamic b
-        dynamic c
-        dynamic d
-        dynamic e
-        dynamic f
-        string g[6,99,100,101] <-[a,b,c,d,e,f]
+            number a
+            func VoTien(number a, number VoTien, number c)
+            begin
+                string c
+            end
+            
+            func main() return
         

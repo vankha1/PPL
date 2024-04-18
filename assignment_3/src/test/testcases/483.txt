@@ -1,8 +1,8 @@
 
-        func foo(number a, number b) return 1.2
-        func main()
-        begin
-            number a <- foo(1,2) + 1
-            writeNumber(foo(1,2))
-        end
-            
+dynamic a
+func main()
+begin
+    number a[2, 3] <- [a, [10, 20, 30]]
+    a <- [1, 9, 6]
+    writeNumber(a[0])
+end

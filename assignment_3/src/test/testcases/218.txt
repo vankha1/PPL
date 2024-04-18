@@ -1,12 +1,7 @@
 
-            func a()
-            func main()
+          func main()
             begin
-            string a <- a()
-            end
-            
-            func a()
-            begin
-            string b 
+                dynamic num
+                bool arr <- num and (num > num)
             end
         

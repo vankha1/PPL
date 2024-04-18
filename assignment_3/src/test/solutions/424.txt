@@ -1,1 +1,1 @@
-No Function Definition: test
+Redeclared Function: foo

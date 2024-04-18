@@ -1,10 +1,7 @@
 
-        func hehe()
-        func hehe1(number a, number b)
-        func main()
-        return 0
-        func hehe1(number c, number d)
-        begin
-        end
-        
+            func a()
+            func main() begin
+                a()
+            end
+            func a() return
         

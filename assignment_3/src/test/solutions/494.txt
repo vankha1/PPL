@@ -1,1 +1,1 @@
-Undeclared Identifier: foo
+Type Cannot Be Inferred: VarDecl(Id(x), None, dynamic, ArrayLit(Id(a), Id(b), Id(c)))

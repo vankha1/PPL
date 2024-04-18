@@ -1,7 +1,12 @@
 
-       
-        
-       
-        number d
-        var c <-[c,c,c,c,d]   ## visit bien truoc roi moi visit init value
+            number a
+            func VoTien() return
+            func main()begin
+                number a
+                begin
+                    number a
+                    string a
+                end
+                
+            end
         

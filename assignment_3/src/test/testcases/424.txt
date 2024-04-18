@@ -1,8 +1,6 @@
 
-        func test(number a[2,3])
-
-        func main()
-        begin
-            number a[2,3]<- test(test(a))
-        end
+            func foo(number a) 
+            func foo(number a, string c) return
+            
+            func main() return
         
