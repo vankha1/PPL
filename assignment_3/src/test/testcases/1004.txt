@@ -1,0 +1,11 @@
+
+            func main()
+            begin
+                dynamic b
+                dynamic c
+                number a[3,2,2]
+                a <- [c, [b,b], [[1,2],[1,2]]]
+                c <- [[2,3],[2,3]]
+                b <- [4,5]
+            end
+        

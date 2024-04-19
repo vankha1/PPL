@@ -1,0 +1,16 @@
+
+            func foo(number a[2,3],number x[2,3])
+            begin
+                dynamic a
+                if (1 = 2) return 1
+                elif (1 = 2) return a
+                else return a
+            end 
+            func main()
+            begin
+                dynamic b
+                dynamic c
+                number a[2,3]
+                number x <- foo(a, c)
+            end
+        

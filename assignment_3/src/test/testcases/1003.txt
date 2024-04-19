@@ -4,6 +4,6 @@
                 dynamic b
                 dynamic c
                 number a[2,3]
-                a <- [[c,c,c], [b,b]]
+                a <- [[b,b,b], [c,b]]
             end
         

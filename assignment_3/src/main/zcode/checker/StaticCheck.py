@@ -470,15 +470,22 @@ class StaticChecker(BaseVisitor, Utils):
                                 return CannotBeInfer()
                             atomic_types = [NumberType, BoolType, StringType] 
                             # TYPE INFERRED: params -> args: Implicit keyword is not parameters
-                            if args_type is None and type(param_type) in atomic_types:
+
+                            if args_type is None :
+                                if type(ast.args[i]) is ArrayLiteral:
+                                    self.check_error_arr_list(ast.args[i])
+                                    for item, lvl in self.levels.items():
+                                        if len(lvl) > 1:
+                                            raise TypeMismatchInExpression(ast.args[i])
+                                        
                                 args_type = Utils.resolveType(ast.args[i], param_type, o)
                                 if args_type is False:    ## khi args_type la arrayLiteral
                                     return CannotBeInfer()
                                 continue 
                             
-                            if type(param_type) is ArrayType:
-                                ast.args[i].varType = param_type
-                                continue
+                            # if type(param_type) is ArrayType:
+                            #     ast.args[i].varType = param_type
+                            #     continue
                             # TYPE MISMATCH
                             if type(args_type) is not type(param_type):
                                 # print("Type mismatch", args_type)
@@ -687,6 +694,13 @@ class StaticChecker(BaseVisitor, Utils):
         print("Return")
         self.has_return = True
         right_type = self.visit(ast.expr, o) if ast.expr else VoidType() # RHS
+        if right_type is None:
+            if type(ast.expr) is ArrayLiteral:
+                self.check_error_arr_list(ast.expr)
+                for item, lvl in self.levels.items():
+                    if len(lvl) > 1:
+                        raise TypeMismatchInExpression(ast.expr)
+                    
         if (type(right_type) is not VoidType):
             if type(right_type) is CannotBeInfer or (right_type is None and type(ast.expr) is ArrayLiteral) :
                 raise TypeCannotBeInferred(ast)
@@ -809,6 +823,12 @@ class StaticChecker(BaseVisitor, Utils):
                             # TYPE INFERRED: params -> args: Implicit keyword is not parameters
                             # Passing by value
                             if args_type is None :
+                                if type(ast.args[i]) is ArrayLiteral:
+                                    self.check_error_arr_list(ast.args[i])
+                                    for item, lvl in self.levels.items():
+                                        if len(lvl) > 1:
+                                            raise TypeMismatchInExpression(ast.args[i])
+                                        
                                 args_type = Utils.resolveType(ast.args[i], param_type, o)
                                 if args_type is False:    ## khi args_type la arrayLiteral
                                     return CannotBeInfer()

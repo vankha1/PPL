@@ -1,0 +1,1 @@
+Type Cannot Be Inferred: AssignStmt(Id(a), ArrayLit(ArrayLit(Id(b), Id(b), Id(b)), ArrayLit(Id(c), Id(b))))

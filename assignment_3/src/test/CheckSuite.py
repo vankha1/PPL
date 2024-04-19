@@ -5273,13 +5273,8 @@ class CheckSuite(unittest.TestCase):
 #         expect = "Type Cannot Be Inferred: VarDecl(Id(c), ArrayType([2.0, 3.0], NumberType), None, ArrayLit(ArrayLit(Id(a), Id(a), Id(a)), ArrayLit(Id(b), Id(b))))"
 #         self.assertTrue(TestChecker.test(input,expect,453))
 
-    def test_array(self):
+    def test_array1(self):
         input="""
-            func test()
-            begin
-                if (1 > 0) return true
-                else return 1
-            end
             func main()
             begin
                 dynamic b
@@ -5288,6 +5283,79 @@ class CheckSuite(unittest.TestCase):
                 a <- [[c,c,c], [b,b]]
             end
         """
-        expect = "Type Cannot Be Inferred: VarDecl(Id(a), ArrayType([2.0, 2.0], NumberType), None, ArrayLit(Id(b), ArrayLit(Id(c))))"
+        expect = "Type Cannot Be Inferred: AssignStmt(Id(a), ArrayLit(ArrayLit(Id(c), Id(c), Id(c)), ArrayLit(Id(b), Id(b))))"
         self.assertTrue(TestChecker.test(input, expect, 1000))
+    def test_array2(self):
+        input="""
+            func main()
+            begin
+                dynamic b
+                dynamic c
+                number a[2,3]
+                a <- [b, [c,b]]
+            end
+        """
+        expect = "Type Mismatch In Expression: ArrayLit(Id(b), ArrayLit(Id(b), Id(b)))"
+        self.assertTrue(TestChecker.test(input, expect, 1002))
+    def test_array3(self):
+        input="""
+            func main()
+            begin
+                dynamic b
+                dynamic c
+                number a[2,3]
+                a <- [[b,b,b], [c,b]]
+            end
+        """
+        expect = "Type Cannot Be Inferred: AssignStmt(Id(a), ArrayLit(ArrayLit(Id(b), Id(b), Id(b)), ArrayLit(Id(b), Id(b))))"
+        self.assertTrue(TestChecker.test(input, expect, 1003))
+    def test_array4(self):
+        input="""
+            func main()
+            begin
+                dynamic b
+                dynamic c
+                number a[3,2,2]
+                a <- [c, [b,b], [[1,2],[1,2]]]
+                c <- [[2,3],[2,3]]
+                b <- [4,5]
+            end
+        """
+        expect = ""
+        self.assertTrue(TestChecker.test(input, expect, 1004))
+        
+    def test_array5(self):
+        input="""
+            func foo(number a[2,3],number a[2,3])
+            func main()
+            begin
+                dynamic b
+                dynamic c
+                number a[2,3]
+                foo(a,[b,[b,b]])
+            end
+        """
+        expect = "Type Mismatch In Expression: ArrayLit(Id(b), ArrayLit(Id(b), Id(b)))"
+        self.assertTrue(TestChecker.test(input, expect, 1005))
+
+    def test_array6(self):
+        input="""
+            func foo(number a[2,3],number x[2,3])
+            begin
+                dynamic a
+                if (1 = 2) return 1
+                elif (1 = 2) return a
+                else return a
+            end 
+            func main()
+            begin
+                dynamic b
+                dynamic c
+                number a[2,3]
+                number x <- foo(a, c)
+            end
+        """
+        expect = "Type Mismatch In Statement: Return(BooleanLit(True))"
+        self.assertTrue(TestChecker.test(input, expect, 1006))
+    
    
